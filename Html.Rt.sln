@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html.Rt", "Html.Rt\Html.Rt.csproj", "{C3B6C052-2591-4D90-AB81-7641D154B357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html.Rt.Unit", "Html.Rt.Unit\Html.Rt.Unit.csproj", "{1218B077-81B7-4002-9DBB-51DDCBA0B984}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3B6C052-2591-4D90-AB81-7641D154B357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B6C052-2591-4D90-AB81-7641D154B357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B6C052-2591-4D90-AB81-7641D154B357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B6C052-2591-4D90-AB81-7641D154B357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1218B077-81B7-4002-9DBB-51DDCBA0B984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1218B077-81B7-4002-9DBB-51DDCBA0B984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1218B077-81B7-4002-9DBB-51DDCBA0B984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1218B077-81B7-4002-9DBB-51DDCBA0B984}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
