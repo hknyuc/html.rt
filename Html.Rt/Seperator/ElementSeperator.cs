@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text.RegularExpressions;
 
 namespace Html.Rt.Seperator
@@ -7,12 +8,7 @@ namespace Html.Rt.Seperator
     {
         private readonly  Regex _regex = new Regex(@"^<([a-z][a-zA-Z0-90-9]+)\s*(.*)(\/)?>$");
         private readonly Regex _endRegex = new Regex(@"^<\/([a-zA-Z0-9]+)\s*>$");
-        private IHtmlSeperator _contextSeperator = new EmptySeperator();
 
-        public ElementSeperator(IHtmlSeperator seperator)
-        {
-            this._contextSeperator = seperator;
-        }
 
         public ElementSeperator()
         {
@@ -35,24 +31,15 @@ namespace Html.Rt.Seperator
         {
             var match = this._regex.Match(content.Content);
             var groups = match.Groups;
-            IEnumerable<IHtmlMarkup> childNodes;
-            if (groups[2].Success)
-            {
-                childNodes = new IHtmlMarkup[0];
-            }
-            else
-            {
-                var cloneHtmlContent = ((HtmlContent) content.Clone());
-                cloneHtmlContent.Next();
-                childNodes = this._contextSeperator.Parse(cloneHtmlContent);
-            }
-            yield return new HtmlElement(groups[0].Name,new AttributeCollection(groups[1].Value),childNodes);
+
+            yield return new HtmlElement(content.Content,groups[1].Value, new AttributeCollection(groups[2].Value), ImmutableArray<IHtmlMarkup>.Empty);
         }
 
         private IEnumerable<IHtmlMarkup> GetEndTagElement(HtmlContent content)
         {
-            var match = this._regex.Match(content.Content);
-            yield return new HtmlElement(match.Groups[0].Value);
+            var match = this._endRegex.Match(content.Content);
+            if(match.Success)
+               yield return new EndTag(content.Content,match.Groups[1].Value);
         }
 
 

@@ -14,5 +14,12 @@ namespace Html.Rt
         {
             return seperator.Parse(new HtmlContent(content).JumpLast());
         }
+
+        public static IEnumerable<IHtmlMarkup> ParseFromOrigin(this IHtmlSeperator seperator, string content)
+        {
+            return seperator.Parse(new HtmlContent(content));
+        }
+        
+       
     }
 }

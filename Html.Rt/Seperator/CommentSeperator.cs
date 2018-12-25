@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace Html.Rt.Seperator
 {
@@ -7,7 +8,7 @@ namespace Html.Rt.Seperator
     {
         public bool CanParse(HtmlContent content)
         {
-            return (content.IndexOf("<!--") == 0);
+            return (content.IndexOf("<!--") > 0);
         }
 
         public IEnumerable<IHtmlMarkup> Parse(HtmlContent content)
@@ -17,7 +18,7 @@ namespace Html.Rt.Seperator
             var lastOfEnd = content.IndexOf("-->");
             if (lastOfEnd > 0)
                 content.NextTo(lastOfEnd);
-            yield return new Comment(content.Content);
+            yield return new Comment(content.Content,content.Content);
         }
     }
 }

@@ -7,15 +7,18 @@ namespace Html.Rt
     {
         public string Name { get; }
         
+        public string Markup { get; }
+        
         public IEnumerable<IAttribute> Attributes { get; }
 
         private readonly IEnumerable<IHtmlMarkup> _nodes;
 
-        public HtmlElement(string name,IEnumerable<IAttribute> attributes,IEnumerable<IHtmlMarkup> nodes)
+        public HtmlElement(string markup,string name,IEnumerable<IAttribute> attributes,IEnumerable<IHtmlMarkup> nodes)
         {
             this.Name = name;
             this.Attributes = attributes;
             this._nodes = nodes;
+            this.Markup = markup;
         }
 
         public HtmlElement(string name)
@@ -34,5 +37,7 @@ namespace Html.Rt
         {
             return GetEnumerator();
         }
+
+
     }
 }

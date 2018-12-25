@@ -6,12 +6,12 @@ namespace Html.Rt.Seperator
     {
         public bool CanParse(HtmlContent content)
         {
-            throw new System.NotImplementedException();
+            return true;
         }
 
         public IEnumerable<IHtmlMarkup> Parse(HtmlContent content)
         {
-            throw new System.NotImplementedException();
+            yield return new Text(content.Content);
         }
     }
 }

@@ -7,18 +7,19 @@ namespace Html.Rt.Seperator
         /// <summary>
         /// Index of Content
         /// </summary>
-        public int Index { get; private set; }
+        public int Index {
+            get { return this.Content.Length-1; } }
 
 
         public string Content
         {
             get;
-            set;
+            private set;
         }
 
         public string NextContent
         {
-            get { return this._fullContent.Substring(Index, this._fullContent.Length - Index - 1); }
+            get { return this._fullContent.Substring(Index, this._fullContent.Length - Index ); }
         }
         
         private string _fullContent;
@@ -26,22 +27,31 @@ namespace Html.Rt.Seperator
         public HtmlContent(string content)
         {
             this._fullContent = content;
+            this.Content = string.Empty;
         }
 
-        public void NextTo(int index)
+        public bool NextTo(int index)
         {
-            for (var i = Index; i< index; i++)
+            if (index >= this._fullContent.Length-1) return false;
+            for (var i = this.Index+1; i< index+1; i++)
             {
                 this.Content += this._fullContent[i].ToString();
             }
+            return true;
+        }
+
+        public void Outstrip()
+        {
+            this._fullContent = this.NextContent;
+            this.Content = string.Empty;
+       
         }
 
         public void NextTo(string content)
         {
-            var indexOfNext = this.NextContent.IndexOf(content, StringComparison.Ordinal);
+            var indexOfNext = this._fullContent.IndexOf(content, StringComparison.Ordinal);
             if (indexOfNext < 0) return;
-            var newIndex = indexOfNext + this.Index;
-            this.NextTo(newIndex);
+            this.NextTo(indexOfNext + content.Length-1); // indexOfNext is first char of content in fullcontent
         }
 
         public HtmlContent JumpLast()
@@ -57,15 +67,14 @@ namespace Html.Rt.Seperator
 
         public bool Next()
         {
-            if (this.Index + 1 >= this._fullContent.Length -1) return false;
-            this.Index++;
-            return true;
+            var newIndex = this.Index + 1;
+            return this.NextTo(newIndex);
         }
 
         public object Clone()
         {
-            var result = new HtmlContent(this._fullContent);
-            result.Index = this.Index;
+            var result =  new HtmlContent(this._fullContent);
+            result.Content = this.Content;
             return result;
         }
         

@@ -26,7 +26,7 @@ namespace Html.Rt.Seperator
             {
                 if(!match.Success) continue;
                 var groups = match.Groups.ToArray();
-                yield return new AttributeElement(groups[1].Value,PruneString(groups[2]?.Value));
+                yield return new AttributeElement(content.Content,groups[1].Value,PruneString(groups[2]?.Value));
 
             }
         }
@@ -43,24 +43,28 @@ namespace Html.Rt.Seperator
     {
         public string Key { get; }
         public string Value { get; }
+        public string Markup { get; }
 
-        public AttributeElement(string key, string value)
+        public AttributeElement(string markup,string key, string value)
         {
             this.Key = key;
             this.Value = value;
+            this.Markup = markup;
         }
+
+   
     }
 
     public class AttributeCollection : IEnumerable<IAttribute>
     {
 
         private string _content;
-        private IHtmlSeperator _seperator = new EmptySeperator();
+        private IHtmlSeperator _seperator = new AttributeSeperator();
         public AttributeCollection(string content)
         {
             this._content = content;
             if (!this._seperator.CanParse(content))
-                this._seperator = new AttributeSeperator();
+                this._seperator = new EmptySeperator();
         }
         
         public IEnumerator<IAttribute> GetEnumerator()
