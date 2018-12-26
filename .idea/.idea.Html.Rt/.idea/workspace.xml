@@ -1,59 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="47acd816-cbab-4883-bdce-64c81ad1e297" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Html.Rt.Unit/TagElements/ElementTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/Attributes/IsAttributeTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/Attributes/IsAttributeTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.runtimeconfig.dev.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.runtimeconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Html.Rt.Unit.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Html.Rt.Unit.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Html.Rt.Unit.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Html.Rt.Unit.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/EndTag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/EndTag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/HtmlElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/HtmlElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/IHtmlMarkup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/IHtmlMarkup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/RtUtility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/RtUtility.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/Seperator/AttributeSeperator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/Seperator/AttributeSeperator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/Seperator/CommentSeperator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/Seperator/CommentSeperator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/Seperator/ElementSeperator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/Seperator/ElementSeperator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/Seperator/HtmlContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/Seperator/HtmlContent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/Seperator/StandartHtmlSeperator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/Seperator/StandartHtmlSeperator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/Seperator/TextSeperator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/Seperator/TextSeperator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/Text.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/Text.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Html.Rt.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Html.Rt.csproj.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Html.Rt.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Html.Rt.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/project.packagespec.json" afterDir="false" />
-    </list>
+    <list default="true" id="47acd816-cbab-4883-bdce-64c81ad1e297" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +12,7 @@
     <session id="-951499065">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -285,8 +234,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/StandartHtmlSeperator.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+            <state relative-caret-position="256">
+              <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
               <folding>
                 <marker date="1545750969638" expanded="false" signature="6:66" ph="..." />
                 <marker date="1545750969638" expanded="true" signature="95:1784" ph="{...}" />
@@ -483,12 +432,12 @@
       <workItem from="1545465606923" duration="2108000" />
       <workItem from="1545480236752" duration="2854000" />
       <workItem from="1545483274790" duration="22127000" />
-      <workItem from="1545728269871" duration="13551000" />
+      <workItem from="1545728269871" duration="13654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63490000" />
+    <option name="totallyTimeSpent" value="63593000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,7 +450,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49620253" visible="true" weight="0.1590604" />
       <window_info id="Structure" order="1" sideWeight="0.50507617" side_tool="true" weight="0.2602118" />
@@ -511,7 +459,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7409396" visible="true" weight="0.27234042" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.7409396" weight="0.27234042" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32903227" />
@@ -1024,8 +972,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/StandartHtmlSeperator.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+        <state relative-caret-position="256">
+          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
           <folding>
             <marker date="1545750969638" expanded="false" signature="6:66" ph="..." />
             <marker date="1545750969638" expanded="true" signature="95:1784" ph="{...}" />
