@@ -17,9 +17,14 @@ namespace Html.Rt.Seperator
             private set;
         }
 
+        public int StartIndex
+        {
+            get { return this.Index - this.Content.Length +1; }
+        }
+
         public string NextContent
         {
-            get { return this._fullContent.Substring(Index, this._fullContent.Length - Index ); }
+            get { return this._fullContent.Substring(Index+1, this._fullContent.Length - Index -1 ); }
         }
         
         private string _fullContent;
@@ -32,7 +37,7 @@ namespace Html.Rt.Seperator
 
         public bool NextTo(int index)
         {
-            if (index >= this._fullContent.Length-1) return false;
+            if (index >= this._fullContent.Length) return false;
             for (var i = this.Index+1; i< index+1; i++)
             {
                 this.Content += this._fullContent[i].ToString();
@@ -44,7 +49,7 @@ namespace Html.Rt.Seperator
         {
             this._fullContent = this.NextContent;
             this.Content = string.Empty;
-       
+
         }
 
         public void NextTo(string content)
@@ -60,9 +65,11 @@ namespace Html.Rt.Seperator
             return this;
         }
 
-        public int IndexOf(string content)
+        public int NextIndexOf(string content)
         {
-            return this._fullContent.IndexOf(content, StringComparison.Ordinal);
+            var result = this._fullContent.IndexOf(content, StringComparison.Ordinal);
+            if (result > this.Index) return result;
+            return -1;
         }
 
         public bool Next()

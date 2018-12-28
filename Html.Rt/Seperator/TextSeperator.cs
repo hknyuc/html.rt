@@ -9,7 +9,12 @@ namespace Html.Rt.Seperator
             return true;
         }
 
-        public IEnumerable<IHtmlMarkup> Parse(HtmlContent content)
+        public ParseResult Parse(HtmlContent content)
+        {
+            return new ParseResult(GetResult(content), 0);
+        }
+
+        private static IEnumerable<IHtmlMarkup> GetResult(HtmlContent content)
         {
             yield return new Text(content.Content);
         }

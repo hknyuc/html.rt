@@ -12,21 +12,26 @@ namespace Html.Rt.Seperator
     public class AttributeSeperator :IHtmlSeperator
     {
         private readonly Regex _regex =
-            new Regex(@"\s*([a-zA-Z][\w:\-]*)(?:\s*=(\s*""(?:\\""|[^""])*""|\s*'(?:\\'|[^'])*'|[^\s>]+))?");
+            new Regex(@"\s*([a-zA-Z][\w:\-]*)\s*(?:\s*=(\s*""(?:\\""|[^""])*""|\s*'(?:\\'|[^'])*'|[^\s>]+))?");
         public bool CanParse(HtmlContent content)
         {
             return this._regex.IsMatch(content.Content);
         }
 
         //("|')((?:\\\1|(?:(?!\1).))*)\1
-        public IEnumerable<IHtmlMarkup> Parse(HtmlContent content)
+        public ParseResult Parse(HtmlContent content)
         {
-            var result = this._regex.Matches(content.Content);
+            return new ParseResult(GetParsed(content.Content), 0);
+        }
+
+        private IEnumerable<IHtmlMarkup> GetParsed(string content)
+        {
+            var result = this._regex.Matches(content);
             foreach (Match match in result)
             {
                 if(!match.Success) continue;
                 var groups = match.Groups.ToArray();
-                yield return new AttributeElement(content.Content,groups[1].Value,PruneString(groups[2]?.Value));
+                yield return new AttributeElement(content,groups[1].Value,PruneString(groups[2]?.Value));
 
             }
         }
@@ -38,6 +43,63 @@ namespace Html.Rt.Seperator
         }
 
     }
+
+
+    /*
+    public class AttributeSeperator2 : IHtmlSeperator
+    {
+        private enum Status
+        {
+            WaitKey=1,
+            WaitValue=2,
+            WaitEq=3,
+            WaitBeginQuotes=4,
+            WaitEndQuotes=5
+        } 
+        public bool CanParse(HtmlContent content)
+        {
+            return true;
+        }
+
+        public ParseResult Parse(HtmlContent content)
+        {
+            var attributeRaw = content.Content;
+            for (var i = 0; i < attributeRaw.Length; i++)
+            {
+               
+            }
+        }
+
+        private IEnumerable<IHtmlMarkup> GetParsed(string content)
+        {
+            var state = Status.WaitKey;
+            var key = string.Empty;
+            var value = string.Empty;
+            char eq;
+            var eqs = new char[]{'\'', '"'};
+            var empty = ' ';
+            for (var i = 0; i < content.Length; i++)
+            {
+                var ch = content[i];
+                if (state == Status.WaitKey)
+                    key += ch;
+                if (state == Status.WaitValue)
+                    value += ch;
+                if (state == Status.WaitBeginQuotes)
+                {
+                    if (ch == empty) continue;
+                    if (eqs.Contains(ch))
+                        eq = ch;
+                }
+
+                if (state == Status.WaitEndQuotes)
+                {
+                    if(eqs.Contains())
+                }
+            }
+        }
+    }
+    */
     
     public class AttributeElement : IAttribute
     {

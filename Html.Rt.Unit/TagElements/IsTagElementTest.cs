@@ -12,10 +12,6 @@ namespace Html.Rt.Unit.TagElements
     {
         public IHtmlSeperator Seperator { get; } = new StandartHtmlSeperator();
         
-        
-
-
-
 
         [TestMethod]
         public void get_child_nodes()
@@ -104,7 +100,7 @@ namespace Html.Rt.Unit.TagElements
             Assert.IsInstanceOfType(result[0], typeof(EndTag));
             Assert.IsInstanceOfType(result[1], typeof(EndTag));
             Assert.IsInstanceOfType(result[2], typeof(IHtmlElement));
-            Assert.IsInstanceOfType(result[3], typeof(IHtmlElement));
+            Assert.IsInstanceOfType(result[3], typeof(EndTag));
             var oneEndTag = (EndTag) result[0];
             var twoEndTag = (EndTag) result[1];
             var htmlElement = (IHtmlElement) result[2];
@@ -148,7 +144,7 @@ namespace Html.Rt.Unit.TagElements
             var content = (Text) result[1];
             var endTag = (EndTag) result[2];
             Assert.AreEqual("script", script.Name);
-            Assert.AreEqual(content.Markup, scriptContent);
+            Assert.AreEqual(scriptContent,content.Markup);
             Assert.AreEqual("script", endTag.Name);
         }
         
@@ -160,7 +156,7 @@ namespace Html.Rt.Unit.TagElements
               margin:10px;
               padding:10px;
               }";
-            const string testCode = @"<style ='text/css'>"+styleContent+"</style>";
+            const string testCode = @"<style type='text/css'>"+styleContent+"</style>";
             Assert.IsTrue(Seperator.CanParse(testCode), "Seperator.CanParse(testCode)");
             var result = Seperator.ParseFromOrigin(testCode).ToArray();
             Assert.AreEqual(3, result.Length);

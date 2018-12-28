@@ -26,7 +26,12 @@ namespace Html.Rt.Seperator
             return this._seperators.FirstOrDefault(x => x.CanParse(content));
         }
 
-        public IEnumerable<IHtmlMarkup> Parse(HtmlContent content)
+        public ParseResult Parse(HtmlContent content)
+        {
+            return new ParseResult(GetResult(content), content.StartIndex);
+        }
+
+        private IEnumerable<IHtmlMarkup> GetResult(HtmlContent content)
         {
             var textContent = new TextContent();
             while (content.Next())
@@ -36,21 +41,26 @@ namespace Html.Rt.Seperator
                     textContent.SetContent(content.Content);
                 else
                 {
-                    textContent.Reset();
-                    foreach (var @item in seperator.Parse(content))
+                    var result = seperator.Parse(content);
+                    //get from html.parse();
+                    if (result.From != 0)
                     {
-                        yield return @item;
+                        textContent.SetContent(content.Content.Substring(0, result.From));
+                        if (!textContent.IsEmpty) yield return new Text(textContent.Markup);
                     }
-                    //content.Outstrip();
+
+                    textContent.Reset();
+                    
+                    foreach (var @item in result)
+                        yield return @item;
+                    
+                    content.Outstrip();
                 }
             }
             if (!textContent.IsEmpty)
-              yield  return new Text(textContent.Markup);
+                yield  return new Text(textContent.Markup);
         }
 
-        public IEnumerable<IHtmlMarkup> Parse(string content)
-        {
-            return this.Parse(new HtmlContent(content));
-        }
+   
     }
 }

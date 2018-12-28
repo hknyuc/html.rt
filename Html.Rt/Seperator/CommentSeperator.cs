@@ -8,16 +8,22 @@ namespace Html.Rt.Seperator
     {
         public bool CanParse(HtmlContent content)
         {
-            return (content.IndexOf("<!--") > 0);
+            return (content.Content.IndexOf("<!--",StringComparison.Ordinal) >= 0);
         }
 
-        public IEnumerable<IHtmlMarkup> Parse(HtmlContent content)
+        public ParseResult Parse(HtmlContent content)
+        {
+            return new ParseResult(GetParsed(content), content.Index - 4);
+        }
+
+        private static IEnumerable<IHtmlMarkup> GetParsed(HtmlContent content)
         {
             var indexOfStart = content.Content.IndexOf("<!--", StringComparison.Ordinal);
             if(indexOfStart < 0) yield break;
-            var lastOfEnd = content.IndexOf("-->");
+            var lastOfEnd = content.NextIndexOf("-->");
             if (lastOfEnd > 0)
                 content.NextTo(lastOfEnd);
+            else content.JumpLast();
             yield return new Comment(content.Content,content.Content);
         }
     }
