@@ -13,7 +13,7 @@ namespace Html.Rt.Seperator
     {
         private readonly Regex _regex =
             new Regex(@"\s*([a-zA-Z][\w:\-]*)\s*(?:\s*=(\s*""(?:\\""|[^""])*""|\s*'(?:\\'|[^'])*'|[^\s>]+))?");
-        public bool CanParse(HtmlContent content)
+        private bool CanParse(HtmlContent content)
         {
             return this._regex.IsMatch(content.Content);
         }
@@ -21,6 +21,9 @@ namespace Html.Rt.Seperator
         //("|')((?:\\\1|(?:(?!\1).))*)\1
         public ParseResult Parse(HtmlContent content)
         {
+            var canParse = this.CanParse(content);
+            if(!canParse)
+                return new ParseResult();
             return new ParseResult(GetParsed(content.Content), 0);
         }
 

@@ -24,6 +24,7 @@
             </e>
           </e>
         </e>
+        <e p="RawText.cs" t="Include" />
         <e p="RtUtility.cs" t="Include" />
         <e p="Seperator" t="Include">
           <e p="AttributeSeperator.cs" t="Include" />
@@ -32,7 +33,10 @@
           <e p="EmptySeperator.cs" t="Include" />
           <e p="HtmlContent.cs" t="Include" />
           <e p="IHtmlSeperator.cs" t="Include" />
+          <e p="MustTagCloseDecoretor.cs" t="Include" />
+          <e p="SeperatorDecorator.cs" t="Include" />
           <e p="StandartHtmlSeperator.cs" t="Include" />
+          <e p="StyleOrScriptSeperator.cs" t="Include" />
           <e p="TextSeperator.cs" t="Include" />
         </e>
         <e p="Text.cs" t="Include" />

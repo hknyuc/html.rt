@@ -4,17 +4,39 @@ namespace Html.Rt.Seperator
 {
     public class HtmlContent :ICloneable
     {
+
+        private int _index = -1;
         /// <summary>
         /// Index of Content
         /// </summary>
-        public int Index {
-            get { return this.Content.Length-1; } }
+        public int Index
+        {
+            get { return _index; }
+        }
 
+        private int _from = -1;
+        public int From
+        {
+            get { return _from; }
+        }
+
+        private string _lastCacheContent;
+        private int _lastFrom;
+        private int _lastIndex;
 
         public string Content
         {
-            get;
-            private set;
+            get
+            {
+                if (this._lastFrom == this.From && this._lastIndex == this.Index && this._lastCacheContent != null)
+                {
+                    return this._lastCacheContent;
+                } 
+                this._lastCacheContent = this._rootContent.Substring(this.From, this.Index - this.From);
+                this._lastFrom = this._from;
+                this._lastIndex = this._index;
+                return this._lastCacheContent;
+            }
         }
 
         public int StartIndex
@@ -24,50 +46,48 @@ namespace Html.Rt.Seperator
 
         public string NextContent
         {
-            get { return this._fullContent.Substring(Index+1, this._fullContent.Length - Index -1 ); }
+            get { return this.RootContent.Substring(Index+1, this._rootContent.Length - Index -1 ); }
         }
         
-        private string _fullContent;
-        
+
+        private string _rootContent = string.Empty;
+        public string RootContent => _rootContent;
+
         public HtmlContent(string content)
         {
-            this._fullContent = content;
-            this.Content = string.Empty;
+            this._rootContent = content;
+            this._from = 0;
+            this._index = 0;
         }
 
         public bool NextTo(int index)
         {
-            if (index >= this._fullContent.Length) return false;
-            for (var i = this.Index+1; i< index+1; i++)
-            {
-                this.Content += this._fullContent[i].ToString();
-            }
+            if (index > this._rootContent.Length) return false;
+            this._index = index;
             return true;
-        }
-
-        public void Outstrip()
-        {
-            this._fullContent = this.NextContent;
-            this.Content = string.Empty;
-
         }
 
         public void NextTo(string content)
         {
-            var indexOfNext = this._fullContent.IndexOf(content, StringComparison.Ordinal);
+            var indexOfNext = this._rootContent.IndexOf(content,this.Index, StringComparison.Ordinal);
             if (indexOfNext < 0) return;
-            this.NextTo(indexOfNext + content.Length-1); // indexOfNext is first char of content in fullcontent
+            this.NextTo(indexOfNext + content.Length); // indexOfNext is first char of content in fullcontent
         }
 
         public HtmlContent JumpLast()
         {
-            this.Content = this._fullContent;
+            this._index = this.RootContent.Length;
             return this;
+        }
+
+        public void Outstrip()
+        {
+            this._from = this._index;
         }
 
         public int NextIndexOf(string content)
         {
-            var result = this._fullContent.IndexOf(content, StringComparison.Ordinal);
+            var result = this.RootContent.IndexOf(content, From, StringComparison.Ordinal);
             if (result > this.Index) return result;
             return -1;
         }
@@ -80,8 +100,9 @@ namespace Html.Rt.Seperator
 
         public object Clone()
         {
-            var result =  new HtmlContent(this._fullContent);
-            result.Content = this.Content;
+            var result =  new HtmlContent(this._rootContent);
+            result._from = this.From;
+            result._index = this.Index;
             return result;
         }
         

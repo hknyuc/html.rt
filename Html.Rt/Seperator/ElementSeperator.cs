@@ -22,13 +22,15 @@ namespace Html.Rt.Seperator
             
         }
         
-        public bool CanParse(HtmlContent content)
+        private bool CanParse(HtmlContent content)
         {
             return this.IsTagElement(content.Content) || this.IsEndTag(content.Content);
         }
 
         public ParseResult Parse(HtmlContent content)
         {
+            var result = this.CanParse(content);
+            if (!result) return new ParseResult();
             var refIndex = new RefIndex();
             var r = GetResult(content, refIndex).ToArray();
             return new ParseResult(r, refIndex.Index);

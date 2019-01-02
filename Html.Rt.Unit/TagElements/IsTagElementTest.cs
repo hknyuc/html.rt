@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using System.Threading;
@@ -146,7 +147,11 @@ namespace Html.Rt.Unit.TagElements
             Assert.AreEqual("script", script.Name);
             Assert.AreEqual(scriptContent,content.Markup);
             Assert.AreEqual("script", endTag.Name);
+  
         }
+
+
+ 
         
         [TestMethod]
         public void style_basic_works()

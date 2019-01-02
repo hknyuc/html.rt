@@ -6,13 +6,15 @@ namespace Html.Rt.Seperator
 {
     public class CommentSeperator :IHtmlSeperator
     {
-        public bool CanParse(HtmlContent content)
+        private bool CanParse(HtmlContent content)
         {
             return (content.Content.IndexOf("<!--",StringComparison.Ordinal) >= 0);
         }
 
         public ParseResult Parse(HtmlContent content)
         {
+            var canParse = this.CanParse(content);
+            if (!canParse) return new ParseResult();
             return new ParseResult(GetParsed(content), content.Index - 4);
         }
 

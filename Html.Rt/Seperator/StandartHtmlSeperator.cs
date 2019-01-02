@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace Html.Rt.Seperator
 {
-    public class StandartHtmlSeperator :IHtmlSeperator
+    public class PartialStandartHtmlSeperator :IHtmlSeperator
     {
         private IList<IHtmlSeperator> _seperators;
-        public StandartHtmlSeperator()
+        public PartialStandartHtmlSeperator()
         {
             this._seperators = new List<IHtmlSeperator>();
             this._seperators.Add(new CommentSeperator());
@@ -15,15 +16,17 @@ namespace Html.Rt.Seperator
             //this._seperators.Add(new AttributeSeperator());
             // this._seperators.Add(new TextSeperator());
         }
-        public bool CanParse(HtmlContent content)
-        {
-            return true;
-            return this._seperators.Any(x => x.CanParse(content));
-        }
 
-        private IHtmlSeperator GetSeperator(HtmlContent content)
+        private  ParseResult GetSeperator(HtmlContent content)
         {
-            return this._seperators.FirstOrDefault(x => x.CanParse(content));
+            ParseResult parseResult;
+            foreach (var seperator in _seperators)
+            {
+                 parseResult = seperator.Parse(content);
+                if (parseResult.IsSuccess) return parseResult;
+            }
+
+            return null;
         }
 
         public ParseResult Parse(HtmlContent content)
@@ -41,19 +44,21 @@ namespace Html.Rt.Seperator
                     textContent.SetContent(content.Content);
                 else
                 {
-                    var result = seperator.Parse(content);
+                    var result = seperator;
                     //get from html.parse();
                     if (result.From != 0)
                     {
                         textContent.SetContent(content.Content.Substring(0, result.From));
-                        if (!textContent.IsEmpty) yield return new Text(textContent.Markup);
+                        if (!textContent.IsEmpty)
+                        {
+                            content.Outstrip();
+                            yield return new Text(textContent.Markup);
+                            textContent.Reset();
+                        }
                     }
-
                     textContent.Reset();
-                    
                     foreach (var @item in result)
                         yield return @item;
-                    
                     content.Outstrip();
                 }
             }
@@ -62,5 +67,18 @@ namespace Html.Rt.Seperator
         }
 
    
+    }
+
+  
+
+    public class StandartHtmlSeperator : IHtmlSeperator
+    {
+        private IHtmlSeperator _partialStandartHtmlSeperator = new MustTagCloseDecorator(new string[]{"script","style"}, new PartialStandartHtmlSeperator());
+
+        public ParseResult Parse(HtmlContent content)
+        {
+            return this._partialStandartHtmlSeperator.Parse(content);
+        }
+
     }
 }

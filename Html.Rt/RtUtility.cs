@@ -10,6 +10,11 @@ namespace Html.Rt
             return seperator.CanParse(new HtmlContent(content).JumpLast());
         }
 
+        public static bool CanParse(this IHtmlSeperator seperator,HtmlContent content)
+        {
+            return seperator.Parse(content).IsSuccess;
+        }
+
         public static IEnumerable<IHtmlMarkup> Parse(this IHtmlSeperator seperator,string content)
         {
             return seperator.Parse(new HtmlContent(content).JumpLast());
