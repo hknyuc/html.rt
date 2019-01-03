@@ -50,7 +50,7 @@ namespace Html.Rt.Seperator
                     //get from html.parse();
                     if (result.From != 0)
                     {
-                        textContent.SetContent(content.Content.Substring(0, result.From));
+                        textContent.SetContent(content.RootContent.Substring(0, result.From));
                         if (!textContent.IsEmpty)
                         {
                             content.Outstrip();

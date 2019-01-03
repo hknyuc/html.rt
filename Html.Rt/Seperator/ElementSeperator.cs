@@ -102,14 +102,12 @@ namespace Html.Rt.Seperator
             var matchResult = this._startRegex.Match(content.Content);
             var name = matchResult.Groups[1].Value;
             refIndex.Index = content.From + matchResult.Index;
-            if (content.CurrentChar == '>' || content.BeforeChar == '>')
+            if (content.CurrentChar == '>')
             {
                 yield return new HtmlElement(content.Content,name);
                 yield break;
 
-            }
-            
-            
+            }   
             
             var beginPosition = refIndex.Index + (matchResult.Length) ; // {from}this is test code <div{beginPosition} name='4'>{index}
             IHtmlContent currentContent = content;
