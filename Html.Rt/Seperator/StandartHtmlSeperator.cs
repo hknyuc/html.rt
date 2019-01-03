@@ -12,12 +12,13 @@ namespace Html.Rt.Seperator
         {
             this._seperators = new List<IHtmlSeperator>();
             this._seperators.Add(new CommentSeperator());
+            this._seperators.Add(new StyleOrScriptSeperator());
             this._seperators.Add(new ElementSeperator());
             //this._seperators.Add(new AttributeSeperator());
             // this._seperators.Add(new TextSeperator());
         }
 
-        private  ParseResult GetSeperator(HtmlContent content)
+        private  ParseResult GetSeperator(IHtmlContent content)
         {
             ParseResult parseResult;
             foreach (var seperator in _seperators)
@@ -29,12 +30,12 @@ namespace Html.Rt.Seperator
             return null;
         }
 
-        public ParseResult Parse(HtmlContent content)
+        public ParseResult Parse(IHtmlContent content)
         {
             return new ParseResult(GetResult(content), content.StartIndex);
         }
 
-        private IEnumerable<IHtmlMarkup> GetResult(HtmlContent content)
+        private IEnumerable<IHtmlMarkup> GetResult(IHtmlContent content)
         {
             var textContent = new TextContent();
             while (content.Next())
@@ -45,6 +46,7 @@ namespace Html.Rt.Seperator
                 else
                 {
                     var result = seperator;
+            
                     //get from html.parse();
                     if (result.From != 0)
                     {
@@ -59,6 +61,7 @@ namespace Html.Rt.Seperator
                     textContent.Reset();
                     foreach (var @item in result)
                         yield return @item;
+                    
                     content.Outstrip();
                 }
             }
@@ -73,9 +76,9 @@ namespace Html.Rt.Seperator
 
     public class StandartHtmlSeperator : IHtmlSeperator
     {
-        private IHtmlSeperator _partialStandartHtmlSeperator = new MustTagCloseDecorator(new string[]{"script","style"}, new PartialStandartHtmlSeperator());
+        private IHtmlSeperator _partialStandartHtmlSeperator =  new PartialStandartHtmlSeperator();
 
-        public ParseResult Parse(HtmlContent content)
+        public ParseResult Parse(IHtmlContent content)
         {
             return this._partialStandartHtmlSeperator.Parse(content);
         }

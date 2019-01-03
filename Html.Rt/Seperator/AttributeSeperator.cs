@@ -13,13 +13,13 @@ namespace Html.Rt.Seperator
     {
         private readonly Regex _regex =
             new Regex(@"\s*([a-zA-Z][\w:\-]*)\s*(?:\s*=(\s*""(?:\\""|[^""])*""|\s*'(?:\\'|[^'])*'|[^\s>]+))?");
-        private bool CanParse(HtmlContent content)
+        private bool CanParse(IHtmlContent content)
         {
             return this._regex.IsMatch(content.Content);
         }
 
         //("|')((?:\\\1|(?:(?!\1).))*)\1
-        public ParseResult Parse(HtmlContent content)
+        public ParseResult Parse(IHtmlContent content)
         {
             var canParse = this.CanParse(content);
             if(!canParse)

@@ -22,6 +22,14 @@ namespace Html.Rt.Unit.TagElements
             Assert.AreEqual("div",htmlElement.Name);
         }
 
+        [TestMethod]
+        public void get_tagName_from_un_ended()
+        {
+            const string testCode = "<div ";
+            Assert.IsTrue(Seperator.CanParse(testCode));
+            var elements = Seperator.Parse(testCode).ToArray();
+        }
+
 
         [TestMethod]
         public void get_tag_Name_with_attributes()

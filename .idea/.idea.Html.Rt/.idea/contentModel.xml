@@ -10,6 +10,7 @@
     <e p="C:\Users\Hakanyu\Documents\Github\Html.Rt" t="IncludeFlat">
       <e p="Html.Rt" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="CacheEnumerable.cs" t="Include" />
         <e p="Comment.cs" t="Include" />
         <e p="EndTag.cs" t="Include" />
         <e p="Html.Rt.csproj" t="IncludeRecursive" />
@@ -31,9 +32,11 @@
           <e p="CommentSeperator.cs" t="Include" />
           <e p="ElementSeperator.cs" t="Include" />
           <e p="EmptySeperator.cs" t="Include" />
+          <e p="EscapeStringHtmlContent.cs" t="Include" />
           <e p="HtmlContent.cs" t="Include" />
           <e p="IHtmlSeperator.cs" t="Include" />
           <e p="MustTagCloseDecoretor.cs" t="Include" />
+          <e p="RangeIndex.cs" t="Include" />
           <e p="SeperatorDecorator.cs" t="Include" />
           <e p="StandartHtmlSeperator.cs" t="Include" />
           <e p="StyleOrScriptSeperator.cs" t="Include" />

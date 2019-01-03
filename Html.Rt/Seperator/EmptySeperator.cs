@@ -5,12 +5,12 @@ namespace Html.Rt.Seperator
 {
     public class EmptySeperator:IHtmlSeperator
     {
-        public bool CanParse(HtmlContent content)
+        public bool CanParse(IHtmlContent content)
         {
             return true;
         }
 
-        public  ParseResult Parse(HtmlContent content)
+        public  ParseResult Parse(IHtmlContent content)
         {
             return new ParseResult(ImmutableArray<IHtmlMarkup>.Empty, content.StartIndex);
         }

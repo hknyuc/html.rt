@@ -2,9 +2,27 @@ using System;
 
 namespace Html.Rt.Seperator
 {
-    public class HtmlContent :ICloneable
+    public interface IHtmlContent :ICloneable
     {
-
+        string RootContent { get; }
+        int From { get; }
+        int Index { get; }
+        char CurrentChar { get; }
+        char BeforeChar { get; }
+        char NextChar { get; }
+        string Content { get; }
+        int StartIndex { get; }
+        string NextContent { get; }
+        bool NextTo(int index);
+        bool NextTo(string content);
+        int NextIndexOf(string content);
+        bool BackTo(int index);
+        void JumpLast();
+        void Outstrip();
+        bool Next();
+    }
+    public class HtmlContent :IHtmlContent
+    {
         private int _index = -1;
         /// <summary>
         /// Index of Content
@@ -23,6 +41,34 @@ namespace Html.Rt.Seperator
         private string _lastCacheContent;
         private int _lastFrom;
         private int _lastIndex;
+
+        public char CurrentChar
+        {
+            get
+            {
+                if (this.Index == -1) return default(char);
+                if (this.Index >= this._rootContent.Length) return default(char);
+                return this._rootContent[this.Index];
+            }
+        }
+
+        public char BeforeChar
+        {
+            get
+            {
+                if (this.Index - 1 < 0) return default(char);
+                return this._rootContent[this.Index - 1];
+            }
+        }
+
+        public char NextChar
+        {
+            get
+            {
+                if (this.Index + 1 > this._rootContent.Length) return default(char);
+                return this._rootContent[this.Index + 1];
+            }
+        }
 
         public string Content
         {
@@ -66,18 +112,26 @@ namespace Html.Rt.Seperator
             this._index = index;
             return true;
         }
+        
 
-        public void NextTo(string content)
+        public bool NextTo(string content)
         {
             var indexOfNext = this._rootContent.IndexOf(content,this.Index, StringComparison.Ordinal);
-            if (indexOfNext < 0) return;
-            this.NextTo(indexOfNext + content.Length); // indexOfNext is first char of content in fullcontent
+            if (indexOfNext < 0) return false;
+            return this.NextTo(indexOfNext + content.Length); // indexOfNext is first char of content in fullcontent
         }
 
-        public HtmlContent JumpLast()
+        public bool BackTo(int index)
+        {
+            if (index < 0) return false;
+            if (this._from > index) return false;
+            this._index = index;
+            return true;
+        }
+
+        public void JumpLast()
         {
             this._index = this.RootContent.Length;
-            return this;
         }
 
         public void Outstrip()
@@ -106,5 +160,101 @@ namespace Html.Rt.Seperator
             return result;
         }
         
+    }
+
+    public class HtmlContentDecorator : IHtmlContent
+    {
+        private IHtmlContent _content;
+
+        public string RootContent
+        {
+            get { return this._content.RootContent; }
+        }
+
+        public int From
+        {
+            get { return this._content.From; }
+        }
+
+        public int Index
+        {
+            get { return this._content.Index; }
+        }
+
+        public char CurrentChar
+        {
+            get { return this._content.CurrentChar; }
+        }
+
+        public char BeforeChar
+        {
+            get { return this._content.BeforeChar; }
+        }
+
+        public char NextChar
+        {
+            get { return this._content.NextChar; }
+        }
+
+
+        public string Content
+        {
+            get { return this._content.Content; }
+        }
+
+        public int StartIndex
+        {
+            get { return this._content.StartIndex; }
+        }
+
+        public string NextContent
+        {
+            get { return this._content.Content; }
+        }
+
+        public HtmlContentDecorator(IHtmlContent content)
+        {
+            this._content = content;
+        }
+        
+        public object Clone()
+        {
+            return new HtmlContentDecorator((IHtmlContent)this._content.Clone());
+        }
+
+        public virtual bool NextTo(int index)
+        {
+            return this._content.NextTo(index);
+        }
+
+        public virtual bool NextTo(string content)
+        {
+            return this._content.NextTo(content);
+        }
+
+        public virtual int NextIndexOf(string content)
+        {
+            return this._content.NextIndexOf(content);
+        }
+
+        public virtual bool BackTo(int index)
+        {
+            return this._content.BackTo(index);
+        }
+
+        public virtual void JumpLast()
+        {
+            this._content.JumpLast();
+        }
+
+        public virtual void Outstrip()
+        {
+            this._content.Outstrip();
+        }
+
+        public virtual bool Next()
+        {
+            return this._content.Next();
+        }
     }
 }

@@ -24,11 +24,13 @@ namespace Html.Rt.Unit.Comments
         }
 
 
+        /*
         [TestMethod]
         public void is_comment_in_comment()
         {
             this.is_comment_with("<!--this text comment-->");
         }
+        */
 
         [TestMethod]
         public void is_not_comment_1()
@@ -40,7 +42,7 @@ namespace Html.Rt.Unit.Comments
         
         private void is_comment_with(string content)
         {
-             var testCode = new HtmlContent($"<!-- {content} -->");
+             var testCode = new HtmlContent($"<!--{content}-->");
             testCode.NextTo("<!--");
             Assert.IsTrue(Seperator.CanParse(testCode), "Seperator.CanParse(testCode)");
             var result = Seperator.Parse(testCode).ToArray();
@@ -48,7 +50,7 @@ namespace Html.Rt.Unit.Comments
             var element = result.First();
             Assert.IsInstanceOfType(element, typeof(Comment));
             var comment = (Comment) element;
-            Assert.AreEqual(testCode.Content,comment.Content);
+            Assert.AreEqual(content,comment.Content);
         }
         
         

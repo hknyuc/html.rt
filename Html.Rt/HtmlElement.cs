@@ -21,8 +21,9 @@ namespace Html.Rt
             this.Markup = markup;
         }
 
-        public HtmlElement(string name)
+        public HtmlElement(string markup,string name)
         {
+            this.Markup = markup;
             this.Name = name;
             this.Attributes = new IAttribute[0];
             this._nodes = new IHtmlMarkup[0];

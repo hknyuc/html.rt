@@ -5,7 +5,7 @@ namespace Html.Rt.Seperator
 {
     public interface IHtmlSeperator
     {
-        ParseResult Parse(HtmlContent content);
+        ParseResult Parse(IHtmlContent content);
     }
 
     public class ParseResult :IEnumerable<IHtmlMarkup>

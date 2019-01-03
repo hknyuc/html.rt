@@ -10,7 +10,7 @@ namespace Html.Rt.Seperator
         {
             this._seperator = seperator;
         }
-        public virtual ParseResult Parse(HtmlContent content)
+        public virtual ParseResult Parse(IHtmlContent content)
         {
             return this._seperator.Parse(content);
         }

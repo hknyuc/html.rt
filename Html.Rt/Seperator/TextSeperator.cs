@@ -4,17 +4,17 @@ namespace Html.Rt.Seperator
 {
     public class TextSeperator :IHtmlSeperator
     {
-        public bool CanParse(HtmlContent content)
+        public bool CanParse(IHtmlContent content)
         {
             return true;
         }
 
-        public ParseResult Parse(HtmlContent content)
+        public ParseResult Parse(IHtmlContent content)
         {
             return new ParseResult(GetResult(content), 0);
         }
 
-        private static IEnumerable<IHtmlMarkup> GetResult(HtmlContent content)
+        private static IEnumerable<IHtmlMarkup> GetResult(IHtmlContent content)
         {
             yield return new Text(content.Content);
         }
