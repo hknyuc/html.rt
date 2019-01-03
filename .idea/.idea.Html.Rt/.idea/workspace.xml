@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47acd816-cbab-4883-bdce-64c81ad1e297" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/Html.Rt/CacheEnumerable.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Html.Rt/Seperator/EscapeStringHtmlContent.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Html.Rt/Seperator/RangeIndex.cs" afterDir="false" />
@@ -9,10 +10,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/TagElements/ElementTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/TagElements/ElementTest.cs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Html.Rt/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.deps.json" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.Unit.runtimeconfig.dev.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/bin/Debug/netcoreapp2.1/Html.Rt.pdb" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.dll" afterDir="false" />
@@ -34,9 +43,28 @@
       <change beforePath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.FileListAbsolute.txt" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Debug/netcoreapp2.1/Html.Rt.Unit.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Html.Rt.Unit.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Html.Rt.Unit.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/Html.Rt.Unit.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/Html.Rt.Unit.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt.Unit/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt.Unit/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/bin/Debug/netcoreapp2.1/Html.Rt.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csproj.CoreCompileInputs.cache" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Debug/netcoreapp2.1/Html.Rt.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Html.Rt.csproj.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Html.Rt.csproj.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/Html.Rt.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/Html.Rt.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Html.Rt/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Html.Rt/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +72,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< Updated upstream
   <component name="FUSProjectUsageTrigger">
     <session id="-951499065">
       <usages-collector id="statistics.lifecycle.project">
@@ -77,6 +106,8 @@
       </usages-collector>
     </session>
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="FavoritesManager">
     <favorites_list name="Html.Rt" />
   </component>
@@ -85,6 +116,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="287">
               <caret line="166" column="12" selection-start-line="166" selection-start-column="12" selection-end-line="166" selection-end-column="12" />
               <folding>
@@ -99,6 +131,23 @@
                 <marker date="1546442427462" expanded="true" signature="6002:6875" ph="{...}" />
                 <marker date="1546442427462" expanded="true" signature="6949:7935" ph="{...}" />
                 <marker date="1546442427462" expanded="true" signature="8036:8830" ph="{...}" />
+=======
+            <state relative-caret-position="189">
+              <caret line="194" column="12" selection-start-line="194" selection-start-column="12" selection-end-line="194" selection-end-column="12" />
+              <folding>
+                <marker date="1546064816722" expanded="false" signature="6:169" ph="..." />
+                <marker date="1546064816722" expanded="true" signature="205:9882" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="257:9880" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="412:2279" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="2348:3455" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="3513:4110" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="4182:5159" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="5262:5896" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="5968:6838" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="6908:7894" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="7962:8954" ph="{...}" />
+                <marker date="1546064816722" expanded="true" signature="9055:9849" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -107,6 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/StyleOrScriptSeperator.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="333">
               <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
               <folding>
@@ -143,6 +193,23 @@
                 <marker date="1546526515058" expanded="true" signature="1450:2444" ph="{...}" />
                 <marker date="1546526515058" expanded="true" signature="1815:1968" ph="{...}" />
                 <marker date="1546526515058" expanded="true" signature="2039:2409" ph="{...}" />
+=======
+            <state relative-caret-position="672">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <marker date="1546062321057" expanded="false" signature="6:171" ph="..." />
+                <marker date="1546062321057" expanded="true" signature="200:2208" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="231:282" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="332:2206" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="549:582" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="641:750" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="805:983" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="1077:1224" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="1317:1628" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="1726:1960" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="2012:2081" ph="{...}" />
+                <marker date="1546062321057" expanded="true" signature="2128:2200" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -151,6 +218,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/ElementSeperator.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="231">
               <caret line="137" column="38" selection-start-line="137" selection-start-column="38" selection-end-line="137" selection-end-column="38" />
               <folding>
@@ -177,6 +245,26 @@
                 <marker date="1546530305016" expanded="true" signature="4692:4848" ph="{...}" />
                 <marker date="1546530305016" expanded="true" signature="4923:5118" ph="{...}" />
                 <marker date="1546530305016" expanded="true" signature="5402:5866" ph="{...}" />
+=======
+            <state relative-caret-position="336">
+              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+              <folding>
+                <marker date="1546062321049" expanded="false" signature="6:227" ph="..." />
+                <marker date="1546062321049" expanded="true" signature="256:3941" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="310:1405" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="518:595" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="691:778" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="846:1198" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="955:1188" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="1255:1398" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="1412:2894" ph="/* public class AttributeSeperator2 : IHtmlSeperator ... */" />
+                <marker date="1546062321049" expanded="true" signature="2946:3260" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="3135:3249" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="3324:3939" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="3485:3650" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="3714:3828" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="3877:3933" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -185,6 +273,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/AttributeSeperator.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="336">
               <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
               <folding>
@@ -203,6 +292,19 @@
                 <marker date="1546524056893" expanded="true" signature="3607:3772" ph="{...}" />
                 <marker date="1546524056893" expanded="true" signature="3836:3950" ph="{...}" />
                 <marker date="1546524056893" expanded="true" signature="3999:4055" ph="{...}" />
+=======
+            <state relative-caret-position="576">
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+              <folding>
+                <marker date="1546062320841" expanded="false" signature="7:96" ph="..." />
+                <marker date="1546062320841" expanded="true" signature="129:1551" ph="{...}" />
+                <marker date="1546062320841" expanded="true" signature="178:1549" ph="{...}" />
+                <marker date="1546062320841" expanded="true" signature="323:393" ph="{...}" />
+                <marker date="1546062320841" expanded="true" signature="464:553" ph="{...}" />
+                <marker date="1546062320841" expanded="true" signature="620:702" ph="{...}" />
+                <marker date="1546062320841" expanded="true" signature="763:927" ph="{...}" />
+                <marker date="1546062320841" expanded="true" signature="990:1525" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -211,6 +313,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/SeperatorDecorator.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="272">
               <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding>
@@ -218,6 +321,16 @@
                 <marker date="1546504357022" expanded="true" signature="96:407" ph="{...}" />
                 <marker date="1546504357022" expanded="true" signature="206:267" ph="{...}" />
                 <marker date="1546504357022" expanded="true" signature="330:401" ph="{...}" />
+=======
+            <state relative-caret-position="192">
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <folding>
+                <marker date="1546062321077" expanded="true" signature="62:506" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="111:504" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="167:212" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="267:346" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="426:498" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -226,6 +339,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/StandartHtmlSeperator.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="116">
               <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
               <folding>
@@ -244,6 +358,27 @@
                 <marker date="1546528284178" expanded="true" signature="1824:2044" ph="{...}" />
                 <marker date="1546528284178" expanded="true" signature="2474:2733" ph="{...}" />
                 <marker date="1546528284178" expanded="true" signature="2636:2726" ph="{...}" />
+=======
+            <state relative-caret-position="1024">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
+              <folding>
+                <marker date="1546062321065" expanded="true" signature="42:2255" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="85:2253" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="100:165" ph="/// Index of Content ... " />
+                <marker date="1546062321065" expanded="true" signature="191:244" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="276:338" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="369:453" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="488:611" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="709:811" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="850:1109" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="981:1074" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="1141:1253" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="1297:1562" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="1601:1692" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="1740:1922" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="1950:2055" ph="{...}" />
+                <marker date="1546062321065" expanded="true" signature="2086:2238" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -252,6 +387,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Html.Rt.Unit/TagElements/ElementTest.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="303">
               <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
               <folding>
@@ -265,6 +401,27 @@
                 <marker date="1546529572728" expanded="true" signature="2611:3060" ph="{...}" />
                 <marker date="1546529572728" expanded="true" signature="3135:3967" ph="{...}" />
                 <marker date="1546529572728" expanded="true" signature="4031:4452" ph="{...}" />
+=======
+            <state relative-caret-position="96">
+              <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
+              <folding>
+                <marker date="1546062320801" expanded="false" signature="6:95" ph="..." />
+                <marker date="1546062320801" expanded="true" signature="130:9068" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="181:9066" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="355:879" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="953:1474" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="1537:2261" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="2341:3034" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="3116:3647" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="3720:4223" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="4294:5186" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="5244:5760" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="5831:6528" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="6604:7126" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="7202:7319" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="7396:8094" ph="{...}" />
+                <marker date="1546062320801" expanded="true" signature="8173:9056" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -273,6 +430,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Html.Rt/RtUtility.cs">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="176">
               <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
               <folding>
@@ -283,11 +441,23 @@
                 <marker date="1546503074402" expanded="true" signature="424:499" ph="{...}" />
                 <marker date="1546503074402" expanded="true" signature="599:730" ph="{...}" />
                 <marker date="1546503074402" expanded="true" signature="841:923" ph="{...}" />
+=======
+            <state relative-caret-position="272">
+              <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+              <folding>
+                <marker date="1546062321049" expanded="false" signature="6:85" ph="..." />
+                <marker date="1546062321049" expanded="true" signature="114:958" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="166:956" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="222:326" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="381:476" ph="{...}" />
+                <marker date="1546062321049" expanded="true" signature="556:950" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/HtmlContent.cs">
           <provider selected="true" editor-type-id="text-editor">
@@ -339,6 +509,26 @@
                 <marker date="1546521019060" expanded="true" signature="6212:6270" ph="{...}" />
                 <marker date="1546521019060" expanded="true" signature="6310:6368" ph="{...}" />
                 <marker date="1546521019060" expanded="true" signature="6404:6465" ph="{...}" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/StandartHtmlSeperator.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="48" column="92" lean-forward="true" selection-start-line="48" selection-start-column="92" selection-end-line="48" selection-end-column="92" />
+              <folding>
+                <marker date="1546062321077" expanded="false" signature="6:66" ph="..." />
+                <marker date="1546062321077" expanded="true" signature="95:2160" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="152:2158" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="248:563" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="446:553" ph="/* this._seperators.Add(new AttributeSeperator()); ... */" />
+                <marker date="1546062321077" expanded="true" signature="613:725" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="791:889" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="944:1040" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="1113:2147" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="1207:2039" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="1397:2025" ph="{...}" />
+                <marker date="1546062321077" expanded="true" signature="1561:1789" ph="{...}" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -360,6 +550,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< Updated upstream
     <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/StandartHtmlSeperator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/AttributeSeperator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/CommentSeperator.cs" root0="FORCE_HIGHLIGHTING" />
@@ -389,11 +580,33 @@
     <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/SeperatorDecorator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/ElementSeperator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/TextSeperator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/HtmlContent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/IHtmlSeperator.cs" root0="FORCE_HIGHLIGHTING" />
+=======
     <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/EmptySeperator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt.Unit/Attributes/IsAttributeTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt.Unit/TagElements/ElementTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/CommentSeperator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/AttributeSeperator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/IHtmlMarkup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/StandartHtmlSeperator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/IAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/RtUtility.cs" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> Stashed changes
+    <setting file="file://$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/IHtmlSeperator.cs" root0="FORCE_HIGHLIGHTING" />
+<<<<<<< Updated upstream
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/EmptySeperator.cs" root0="FORCE_HIGHLIGHTING" />
+=======
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Text.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/HtmlContent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/EndTag.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/TextSeperator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Seperator/ElementSeperator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/Comment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/IHtmlElement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt/HtmlElement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Html.Rt.Unit/AttributeTest.cs" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> Stashed changes
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -443,6 +656,7 @@
       </list>
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
@@ -453,6 +667,12 @@
     <option name="x" value="-10" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -462,6 +682,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
+=======
+      <pane id="AssemblyExplorer" />
+>>>>>>> Stashed changes
       <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
@@ -509,7 +733,10 @@
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
+<<<<<<< Updated upstream
       <pane id="AssemblyExplorer" />
+=======
+>>>>>>> Stashed changes
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -549,14 +776,24 @@
       <workItem from="1545480236752" duration="2854000" />
       <workItem from="1545483274790" duration="22127000" />
       <workItem from="1545728269871" duration="13654000" />
+<<<<<<< Updated upstream
       <workItem from="1545986025114" duration="10221000" />
       <workItem from="1546417877048" duration="238000" />
       <workItem from="1546419080952" duration="39272000" />
+=======
+      <workItem from="1545986025114" duration="10152000" />
+      <workItem from="1545483274790" duration="22716000" />
+      <workItem from="1546062665635" duration="3137000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="113324000" />
+=======
+    <option name="totallyTimeSpent" value="53665000" />
+>>>>>>> Stashed changes
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,11 +805,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< Updated upstream
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49601594" visible="true" weight="0.16442953" />
       <window_info id="Structure" order="1" sideWeight="0.50507617" side_tool="true" weight="0.2602118" />
       <window_info id="Favorites" order="2" sideWeight="0.50398403" side_tool="true" weight="0.16040269" />
+=======
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49707603" visible="true" weight="0.16263238" />
+      <window_info id="Structure" order="1" sideWeight="0.50507617" side_tool="true" weight="0.2602118" />
+      <window_info id="Favorites" order="2" sideWeight="0.50292397" side_tool="true" weight="0.16040269" />
+>>>>>>> Stashed changes
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -586,9 +831,15 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+<<<<<<< Updated upstream
       <window_info active="true" anchor="bottom" id="Unit Tests" order="11" sideWeight="0.71073824" visible="true" weight="0.28794327" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32765958" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.2872483" side_tool="true" weight="0.28794327" />
+=======
+      <window_info anchor="bottom" id="Unit Tests" order="11" sideWeight="0.71073824" weight="0.34138486" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32903227" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.2872483" side_tool="true" weight="0.2721417" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Build" order="14" sideWeight="0.49932885" weight="0.32765958" />
       <window_info anchor="bottom" id="Performance Profiler" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -615,9 +866,6 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -640,6 +888,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs</url>
+<<<<<<< Updated upstream
           <line>47</line>
           <properties documentPath="$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs" initialLine="37">
             <startOffsets>
@@ -647,6 +896,15 @@
             </startOffsets>
             <endOffsets>
               <option value="1276" />
+=======
+          <line>53</line>
+          <properties documentPath="$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs" initialLine="37">
+            <startOffsets>
+              <option value="1497" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1543" />
+>>>>>>> Stashed changes
             </endOffsets>
           </properties>
           <option name="timeStamp" value="48" />
@@ -730,6 +988,7 @@
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs</url>
           <line>120</line>
           <properties documentPath="$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs" initialLine="120">
@@ -738,6 +997,16 @@
             </startOffsets>
             <endOffsets>
               <option value="5572" />
+=======
+          <url>file://$PROJECT_DIR$/Html.Rt/Seperator/CommentSeperator.cs</url>
+          <line>28</line>
+          <properties documentPath="$PROJECT_DIR$/Html.Rt/Seperator/CommentSeperator.cs" initialLine="21">
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+>>>>>>> Stashed changes
             </endOffsets>
           </properties>
           <option name="timeStamp" value="120" />
@@ -973,6 +1242,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/341DFE22-562E-4DB3-8729-B233A8CD1A5F/de/729f2bd6/IEnumerator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -1007,10 +1277,31 @@
             <marker date="1546502961314" expanded="true" signature="518:551" ph="{...}" />
             <marker date="1546502961314" expanded="true" signature="595:673" ph="{...}" />
             <marker date="1546502961314" expanded="true" signature="702:777" ph="{...}" />
+=======
+    <entry file="file://$PROJECT_DIR$/Html.Rt.Unit/TagElements/ElementTest.cs" />
+    <entry file="file://$PROJECT_DIR$/Html.Rt.Unit/TagElements/IsTagElementTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="194" column="12" selection-start-line="194" selection-start-column="12" selection-end-line="194" selection-end-column="12" />
+          <folding>
+            <marker date="1546064816722" expanded="false" signature="6:169" ph="..." />
+            <marker date="1546064816722" expanded="true" signature="205:9882" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="257:9880" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="412:2279" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="2348:3455" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="3513:4110" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="4182:5159" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="5262:5896" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="5968:6838" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="6908:7894" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="7962:8954" ph="{...}" />
+            <marker date="1546064816722" expanded="true" signature="9055:9849" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/IHtmlSeperator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1025,10 +1316,30 @@
             <marker date="1546503339478" expanded="true" signature="757:813" ph="{...}" />
             <marker date="1546503339478" expanded="true" signature="870:938" ph="{...}" />
             <marker date="1546503339478" expanded="true" signature="987:1043" ph="{...}" />
+=======
+    <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/ElementSeperator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <marker date="1546062321057" expanded="false" signature="6:171" ph="..." />
+            <marker date="1546062321057" expanded="true" signature="200:2208" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="231:282" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="332:2206" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="549:582" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="641:750" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="805:983" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="1077:1224" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="1317:1628" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="1726:1960" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="2012:2081" ph="{...}" />
+            <marker date="1546062321057" expanded="true" signature="2128:2200" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/EmptySeperator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
@@ -1039,10 +1350,33 @@
             <marker date="1546504357039" expanded="true" signature="147:423" ph="{...}" />
             <marker date="1546504357039" expanded="true" signature="204:249" ph="{...}" />
             <marker date="1546504357039" expanded="true" signature="306:417" ph="{...}" />
+=======
+    <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/AttributeSeperator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding>
+            <marker date="1546062321049" expanded="false" signature="6:227" ph="..." />
+            <marker date="1546062321049" expanded="true" signature="256:3941" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="310:1405" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="518:595" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="691:778" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="846:1198" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="955:1188" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="1255:1398" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="1412:2894" ph="/* public class AttributeSeperator2 : IHtmlSeperator ... */" />
+            <marker date="1546062321049" expanded="true" signature="2946:3260" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="3135:3249" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="3324:3939" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="3485:3650" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="3714:3828" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="3877:3933" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/TextSeperator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -1053,10 +1387,26 @@
             <marker date="1546504356986" expanded="true" signature="168:213" ph="{...}" />
             <marker date="1546504356986" expanded="true" signature="269:348" ph="{...}" />
             <marker date="1546504356986" expanded="true" signature="429:501" ph="{...}" />
+=======
+    <entry file="file://$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+          <folding>
+            <marker date="1546062320841" expanded="false" signature="7:96" ph="..." />
+            <marker date="1546062320841" expanded="true" signature="129:1551" ph="{...}" />
+            <marker date="1546062320841" expanded="true" signature="178:1549" ph="{...}" />
+            <marker date="1546062320841" expanded="true" signature="323:393" ph="{...}" />
+            <marker date="1546062320841" expanded="true" signature="464:553" ph="{...}" />
+            <marker date="1546062320841" expanded="true" signature="620:702" ph="{...}" />
+            <marker date="1546062320841" expanded="true" signature="763:927" ph="{...}" />
+            <marker date="1546062320841" expanded="true" signature="990:1525" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/MustTagCloseDecoretor.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1104">
@@ -1075,35 +1425,53 @@
             <marker date="1546504357086" expanded="true" signature="1852:2575" ph="{...}" />
             <marker date="1546504357086" expanded="true" signature="2015:2135" ph="{...}" />
             <marker date="1546504357086" expanded="true" signature="2240:2511" ph="{...}" />
+=======
+    <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/TextSeperator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <marker date="1546062321077" expanded="true" signature="62:506" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="111:504" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="167:212" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="267:346" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="426:498" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Html.Rt.Unit/Attributes/IsAttributeTest.cs">
+    <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/HtmlContent.cs">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="149">
           <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+=======
+        <state relative-caret-position="1024">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+>>>>>>> Stashed changes
           <folding>
-            <marker date="1545728392699" expanded="false" signature="6:95" ph="..." />
-            <marker date="1545728392699" expanded="true" signature="130:9068" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="181:9066" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="355:879" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="953:1474" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="1537:2261" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="2341:3034" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="3116:3647" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="3720:4223" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="4294:5186" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="5244:5760" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="5831:6528" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="6604:7126" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="7202:7319" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="7396:8094" ph="{...}" />
-            <marker date="1545728392699" expanded="true" signature="8173:9056" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="42:2255" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="85:2253" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="100:165" ph="/// Index of Content ... " />
+            <marker date="1546062321065" expanded="true" signature="191:244" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="276:338" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="369:453" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="488:611" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="709:811" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="850:1109" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="981:1074" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="1141:1253" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="1297:1562" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="1601:1692" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="1740:1922" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="1950:2055" ph="{...}" />
+            <marker date="1546062321065" expanded="true" signature="2086:2238" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/CommentSeperator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1115,12 +1483,36 @@
             <marker date="1546506905402" expanded="true" signature="228:327" ph="{...}" />
             <marker date="1546506905402" expanded="true" signature="383:596" ph="{...}" />
             <marker date="1546506905402" expanded="true" signature="677:1111" ph="{...}" />
+=======
+    <entry file="file://$PROJECT_DIR$/Html.Rt.Unit/Attributes/IsAttributeTest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
+          <folding>
+            <marker date="1546062320801" expanded="false" signature="6:95" ph="..." />
+            <marker date="1546062320801" expanded="true" signature="130:9068" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="181:9066" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="355:879" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="953:1474" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="1537:2261" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="2341:3034" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="3116:3647" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="3720:4223" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="4294:5186" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="5244:5760" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="5831:6528" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="6604:7126" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="7202:7319" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="7396:8094" ph="{...}" />
+            <marker date="1546062320801" expanded="true" signature="8173:9056" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Html.Rt.Unit/Comments/IsCommentTest.cs">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="152">
           <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding>
@@ -1319,12 +1711,24 @@
             <marker date="1546524056893" expanded="true" signature="3607:3772" ph="{...}" />
             <marker date="1546524056893" expanded="true" signature="3836:3950" ph="{...}" />
             <marker date="1546524056893" expanded="true" signature="3999:4055" ph="{...}" />
+=======
+        <state relative-caret-position="272">
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding>
+            <marker date="1546062321049" expanded="false" signature="6:85" ph="..." />
+            <marker date="1546062321049" expanded="true" signature="114:958" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="166:956" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="222:326" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="381:476" ph="{...}" />
+            <marker date="1546062321049" expanded="true" signature="556:950" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Html.Rt/Seperator/StandartHtmlSeperator.cs">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="116">
           <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
           <folding>
@@ -1412,6 +1816,23 @@
             <marker date="1546530305016" expanded="true" signature="4692:4848" ph="{...}" />
             <marker date="1546530305016" expanded="true" signature="4923:5118" ph="{...}" />
             <marker date="1546530305016" expanded="true" signature="5402:5866" ph="{...}" />
+=======
+        <state relative-caret-position="223">
+          <caret line="48" column="92" lean-forward="true" selection-start-line="48" selection-start-column="92" selection-end-line="48" selection-end-column="92" />
+          <folding>
+            <marker date="1546062321077" expanded="false" signature="6:66" ph="..." />
+            <marker date="1546062321077" expanded="true" signature="95:2160" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="152:2158" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="248:563" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="446:553" ph="/* this._seperators.Add(new AttributeSeperator()); ... */" />
+            <marker date="1546062321077" expanded="true" signature="613:725" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="791:889" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="944:1040" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="1113:2147" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="1207:2039" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="1397:2025" ph="{...}" />
+            <marker date="1546062321077" expanded="true" signature="1561:1789" ph="{...}" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>

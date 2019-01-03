@@ -175,6 +175,32 @@ namespace Html.Rt.Unit.TagElements
             Assert.AreEqual(styleContent, textContent.Markup);
             Assert.AreEqual("style", endTag.Name);
         }
+
+        [TestMethod]
+        public void style_content_have_html()
+        {
+            const string styleContent = @".name {
+            content:'</div>',
+            margin:10px,
+            padding:10px
+            }";
+            const string testCode = @"<style type='text/css'>"+styleContent+"</style>";
+            Assert.IsTrue(Seperator.CanParse(testCode), "Seperator.CanParse(testCode)");
+            var result = Seperator.ParseFromOrigin(testCode).ToArray();
+            Assert.AreEqual(3, result.Length);
+            Assert.IsInstanceOfType(result[0], typeof(IHtmlElement));
+            Assert.IsInstanceOfType(result[1], typeof(Text));
+            Assert.IsInstanceOfType(result[2], typeof(EndTag));
+            var htmlElement = (IHtmlElement) result[0];
+            var textContent = (Text) result[1];
+            var endTag = (EndTag) result[2];
+            Assert.AreEqual("style", htmlElement.Name);
+            Assert.AreEqual(styleContent, textContent.Markup);
+            Assert.AreEqual("style", endTag.Name);
+            
+
+
+        }
         
         [TestMethod]
         public void get_tag_element_when_attributes_have_tag_element()
