@@ -32,6 +32,7 @@ namespace Html.Rt.Seperator
         public ParseResult()
         {
             this.IsSuccess = false;
+            this.Result = new IHtmlMarkup[0];
         }
 
         public IEnumerator<IHtmlMarkup> GetEnumerator()

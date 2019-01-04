@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace Html.Rt.Seperator
 {
-    public class AttributeSeperator :IHtmlSeperator
+    public class AttributeSeperatorByRegex :IHtmlSeperator
     {
         private readonly Regex _regex =
             new Regex(@"\s*([a-zA-Z][\w:\-]*)\s*(?:\s*=(\s*""(?:\\""|[^""])*""|\s*'(?:\\'|[^'])*'|[^\s>]+))?");
@@ -48,61 +49,95 @@ namespace Html.Rt.Seperator
     }
 
 
-    /*
+    
     public class AttributeSeperator2 : IHtmlSeperator
     {
+        private static char[] _qs = new char[] {'\'', '"'};
         private enum Status
         {
-            WaitKey=1,
+            InKey=1,
             WaitValue=2,
-            WaitEq=3,
-            WaitBeginQuotes=4,
-            WaitEndQuotes=5
+            InBeginQuotes=3,
+    
+        }
+
+        public ParseResult Parse(IHtmlContent content)
+        {
+            var startPosition = content.Index;
+            return new ParseResult(GetAttributes(content), startPosition);
+        }
+
+        private static bool InQuotes(char ch)
+        {
+            return _qs.Contains(ch);
         } 
-        public bool CanParse(HtmlContent content)
-        {
-            return true;
-        }
 
-        public ParseResult Parse(HtmlContent content)
+        private static IEnumerable<IHtmlMarkup> GetAttributes(IHtmlContent content)
         {
-            var attributeRaw = content.Content;
-            for (var i = 0; i < attributeRaw.Length; i++)
-            {
-               
-            }
-        }
-
-        private IEnumerable<IHtmlMarkup> GetParsed(string content)
-        {
-            var state = Status.WaitKey;
+            var status = Status.InKey;
             var key = string.Empty;
             var value = string.Empty;
-            char eq;
-            var eqs = new char[]{'\'', '"'};
-            var empty = ' ';
-            for (var i = 0; i < content.Length; i++)
-            {
-                var ch = content[i];
-                if (state == Status.WaitKey)
-                    key += ch;
-                if (state == Status.WaitValue)
-                    value += ch;
-                if (state == Status.WaitBeginQuotes)
-                {
-                    if (ch == empty) continue;
-                    if (eqs.Contains(ch))
-                        eq = ch;
-                }
+            var quotes = default(char);
+            var all = string.Empty;
 
-                if (state == Status.WaitEndQuotes)
+            void Clear()
+            {
+                key = string.Empty;
+                all = string.Empty;
+                value = string.Empty;
+                quotes = default(char);
+            }
+
+            while (content.Next())
+            {
+                all += content.CurrentChar;
+                if(status == Status.InKey && string.IsNullOrEmpty(key) && char.IsWhiteSpace(content.CurrentChar)) continue;
+                if (status == Status.InKey)
                 {
-                    if(eqs.Contains())
+                    if (char.IsWhiteSpace(content.CurrentChar) && !string.IsNullOrEmpty(key))
+                    {
+                
+                        yield return new AttributeElement(all, key, value);
+                        Clear();
+                        continue;
+                    }
+                  
+                    if (content.CurrentChar == '=')
+                    {
+                        status = Status.WaitValue;
+                        continue;
+                    }
+                    key += content.CurrentChar;
+                   
+                }
+                else if (status == Status.WaitValue)
+                {
+                    if (InQuotes(content.CurrentChar) && content.BeforeChar != '\\')
+                    {
+                        status = Status.InBeginQuotes;
+                        quotes = content.CurrentChar;
+                    }
+                }
+                else if (status == Status.InBeginQuotes)
+                {
+                    if (content.CurrentChar == quotes && content.BeforeChar != '\\')
+                    {
+                        yield return new AttributeElement(all, key, value);
+                        status = Status.InKey;
+                        Clear();
+                    }
+                    else
+                    {
+                        value += content.CurrentChar;
+                    }
                 }
             }
-        }
-    }
-    */
+
+            if (!string.IsNullOrWhiteSpace(key))
+                yield return new AttributeElement(all, key, value);
+        } 
+    }    
+    
     
     public class AttributeElement : IAttribute
     {
@@ -123,13 +158,11 @@ namespace Html.Rt.Seperator
     public class AttributeCollection : IEnumerable<IAttribute>
     {
 
-        private string _content;
-        private IHtmlSeperator _seperator = new AttributeSeperator();
+        private HtmlContent _content;
+        private IHtmlSeperator _seperator = new SeperatorIterator(new AttributeSeperator2());
         public AttributeCollection(string content)
         {
-            this._content = content;
-            if (!this._seperator.CanParse(content))
-                this._seperator = new EmptySeperator();
+            this._content = new HtmlContent(content);
         }
         
         public IEnumerator<IAttribute> GetEnumerator()

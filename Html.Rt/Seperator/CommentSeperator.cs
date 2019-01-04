@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace Html.Rt.Seperator
@@ -24,9 +25,10 @@ namespace Html.Rt.Seperator
             if(indexOfStart < 0) yield break;
             var lastOfEnd = content.NextIndexOf("-->");
             if (lastOfEnd > 0)
-                content.NextTo(lastOfEnd+3);
+                content.NextTo(lastOfEnd);
             else content.JumpLast();
-            yield return new Comment(content.Content,content.Content.Substring(4,content.Content.Length-7));
+            var text = content.Content.Substring(4, content.Content.Length - 3-4);
+            yield return new Comment(content.Content, text);
         }
     }
 }

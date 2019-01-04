@@ -20,6 +20,7 @@ namespace Html.Rt.Seperator
         void JumpLast();
         void Outstrip();
         bool Next();
+        void Reset();
     }
     public class HtmlContent :IHtmlContent
     {
@@ -74,11 +75,16 @@ namespace Html.Rt.Seperator
         {
             get
             {
+                if (_from == -1 || this.Index == -1) return string.Empty;
                 if (this._lastFrom == this.From && this._lastIndex == this.Index && this._lastCacheContent != null)
                 {
                     return this._lastCacheContent;
-                } 
-                this._lastCacheContent = this._rootContent.Substring(this.From, this.Index - this.From);
+                }
+
+                var max = this.Index - this.From;
+                this._lastCacheContent = this._rootContent.Substring(this.From, this.Index-this.From);
+                if (this.CurrentChar != default(char))
+                    this._lastCacheContent += this.CurrentChar; 
                 this._lastFrom = this._from;
                 this._lastIndex = this._index;
                 return this._lastCacheContent;
@@ -102,21 +108,24 @@ namespace Html.Rt.Seperator
         public HtmlContent(string content)
         {
             this._rootContent = content;
-            this._from = 0;
-            this._index = 0;
+            this._from =0;
+            this._index = -1;
         }
 
         public bool NextTo(int index)
         {
-            if (index > this._rootContent.Length) return false;
-            this._index = index;
-            return true;
+            var isDone = index >= this._rootContent.Length;
+            if (index < this._rootContent.Length)
+                this._index = index;
+            else this._index = this._rootContent.Length;
+            return !isDone;
         }
         
 
         public bool NextTo(string content)
         {
-            var indexOfNext = this._rootContent.IndexOf(content,this.Index, StringComparison.Ordinal);
+            var index = this.Index < 0 ? 0 : this.Index;
+            var indexOfNext = this._rootContent.IndexOf(content,index, StringComparison.Ordinal);
             if (indexOfNext < 0) return false;
             return this.NextTo(indexOfNext + content.Length); // indexOfNext is first char of content in fullcontent
         }
@@ -136,13 +145,14 @@ namespace Html.Rt.Seperator
 
         public void Outstrip()
         {
+            this.Next();
             this._from = this._index;
         }
 
         public int NextIndexOf(string content)
         {
             var result = this.RootContent.IndexOf(content, From, StringComparison.Ordinal);
-            if (result > this.Index) return result;
+            if (result > this.Index) return result+content.Length;
             return -1;
         }
 
@@ -150,6 +160,12 @@ namespace Html.Rt.Seperator
         {
             var newIndex = this.Index + 1;
             return this.NextTo(newIndex);
+        }
+
+        public void Reset()
+        {
+            this._from = 0;
+            this._index = -1;
         }
 
         public object Clone()
@@ -255,6 +271,11 @@ namespace Html.Rt.Seperator
         public virtual bool Next()
         {
             return this._content.Next();
+        }
+
+        public virtual void Reset()
+        {
+            this._content.Reset();
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace Html.Rt.Seperator
@@ -11,6 +12,7 @@ namespace Html.Rt.Seperator
     {
         public int Index { get; set; }
     }
+  /*  
     public class ElementMSeperator :IHtmlSeperator
     {
   
@@ -74,11 +76,14 @@ namespace Html.Rt.Seperator
             return this._endRegex.IsMatch(content);
         }
     }
-
+*/
     public class ElementSeperator : IHtmlSeperator
     {
         private readonly Regex _endRegex = new Regex(@"<\/([a-zA-Z0-9]+)\s*>$");
-        private readonly Regex _startRegex = new Regex("<([a-zA-Z][a-zA-Z0-9]+)(\\s+|>|\\>)");
+        private readonly Regex _startRegex = new Regex("<([a-zA-Z][a-zA-Z0-9]+)\\s*(\\s+|\\/>|>)");
+
+       
+        
         private bool IsEndTag(string content)
         {
             return this._endRegex.IsMatch(content);
@@ -93,7 +98,7 @@ namespace Html.Rt.Seperator
         private IEnumerable<IHtmlMarkup> GetEndTagElement(IHtmlContent content,RefIndex refIndex)
         {
             var match = this._endRegex.Match(content.Content);
-            refIndex.Index = content.From + match.Index;
+            refIndex.Index = match.Index;
             yield return new EndTag(content.Content, match.Groups[1].Value);
         }
 
@@ -101,7 +106,7 @@ namespace Html.Rt.Seperator
         {
             var matchResult = this._startRegex.Match(content.Content);
             var name = matchResult.Groups[1].Value;
-            refIndex.Index = content.From + matchResult.Index;
+            refIndex.Index =  matchResult.Index;
             if (content.CurrentChar == '>')
             {
                 yield return new HtmlElement(content.Content,name);
@@ -109,7 +114,7 @@ namespace Html.Rt.Seperator
 
             }   
             
-            var beginPosition = refIndex.Index + (matchResult.Length) ; // {from}this is test code <div{beginPosition} name='4'>{index}
+            var beginPosition = refIndex.Index + (matchResult.Length) +content.From ; // {from}this is test code <div{beginPosition} name='4'>{index}
             IHtmlContent currentContent = content;
             if (beginPosition < content.Index)
                 currentContent =
@@ -118,6 +123,7 @@ namespace Html.Rt.Seperator
             yield return new HtmlElement(content.Content,name,new AttributeCollection(GetAttributes(currentContent)).ToArray(), ImmutableArray<IHtmlMarkup>.Empty);
         }
 
+  
         private static string GetAttributes(IHtmlContent content)
         {
             var escapeHtml = new EscapeStringHtmlContent(content);
@@ -127,21 +133,21 @@ namespace Html.Rt.Seperator
             {
                 if (content.CurrentChar == '>')
                 {
-                    escapeHtml.Next();
-                    lastPosition = content.Index - 1;
+                    lastPosition = content.Index;
                     break;
                 }
-                if (content.CurrentChar == '/' && content.NextChar == '>')
-                {
-                    escapeHtml.Next();
-                    escapeHtml.Next();
-                    lastPosition = content.Index - 2;
-                    break;
-                }
+                
             }
 
-            if (beginPosition == lastPosition) return "";
-            var result = content.RootContent.Substring(beginPosition, lastPosition-beginPosition+1);
+            var isCatched = beginPosition != lastPosition;
+
+            if (!isCatched)
+            {
+                return content.Content.Substring(beginPosition, content.Content.Length - beginPosition);
+            }
+
+
+            var result = content.RootContent.Substring(beginPosition, lastPosition-beginPosition);
             return result;
         }
         

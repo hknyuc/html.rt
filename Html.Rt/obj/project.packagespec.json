@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\Html.Rt.csproj",
+    "projectUniqueName": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\Html.Rt.csproj",
     "projectName": "Html.Rt",
-    "projectPath": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\Html.Rt.csproj",
-    "outputPath": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\obj\\",
+    "projectPath": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\Html.Rt.csproj",
+    "outputPath": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

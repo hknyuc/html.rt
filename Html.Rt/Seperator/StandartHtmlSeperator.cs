@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 
 namespace Html.Rt.Seperator
@@ -12,7 +10,7 @@ namespace Html.Rt.Seperator
         {
             this._seperators = new List<IHtmlSeperator>();
             this._seperators.Add(new CommentSeperator());
-            this._seperators.Add(new StyleOrScriptSeperator());
+            this._seperators.Add(new HtmlCodeSeperator());
             this._seperators.Add(new ElementSeperator());
             //this._seperators.Add(new AttributeSeperator());
             // this._seperators.Add(new TextSeperator());
@@ -50,12 +48,11 @@ namespace Html.Rt.Seperator
                     //get from html.parse();
                     if (result.From != 0)
                     {
-                        textContent.SetContent(content.RootContent.Substring(0, result.From));
+                        textContent.SetContent(content.Content.Substring(1,result.From-1));
                         if (!textContent.IsEmpty)
                         {
                             content.Outstrip();
                             yield return new Text(textContent.Markup);
-                            textContent.Reset();
                         }
                     }
                     textContent.Reset();

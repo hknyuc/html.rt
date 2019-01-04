@@ -1,4 +1,5 @@
 using System.Linq;
+using Html.Rt.Seperator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Html.Rt.Unit.TagElements
@@ -30,13 +31,28 @@ namespace Html.Rt.Unit.TagElements
             var elements = Seperator.Parse(testCode).ToArray();
         }
 
+        [TestMethod]
+        public void get_tag_none_closed()
+        {
+            var testCode = new HtmlContent("<div name='hakan'");
+            Assert.IsTrue(Iterate(Seperator).CanParse(testCode));
+            var result = Iterate(Seperator).Parse(testCode).ToArray();
+            Assert.AreEqual(1, result.Length);
+            var tagElement = (IHtmlElement) result[0];
+            Assert.AreEqual("div", tagElement.Name);
+            Assert.AreEqual(1, tagElement.Attributes.Count());
+            var attribute =  (IAttribute)tagElement.Attributes.ToArray()[0];
+            Assert.AreEqual("name", attribute.Key);
+
+        }
+
 
         [TestMethod]
         public void get_tag_Name_with_attributes()
         {
-            const string testCode = "<div name='hakan' value=\"12345\">";
-            Assert.IsTrue(Seperator.CanParse(testCode));
-            var result = Seperator.Parse(testCode).ToArray();
+            var testCode = new HtmlContent("<div name='hakan' value=\"12345\">");
+            Assert.IsTrue(Iterate(Seperator).CanParse(testCode));
+            var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1, result.Length);
             var element = result.First();
             Assert.IsInstanceOfType(element, typeof(IHtmlElement));
@@ -44,13 +60,18 @@ namespace Html.Rt.Unit.TagElements
             Assert.AreEqual("div", htmlElement.Name);
         }
 
+        private static IHtmlSeperator Iterate(IHtmlSeperator seperator)
+        {
+            return new SeperatorIterator(seperator);
+        }
+
 
         [TestMethod]
         public void get_attributes_from_single_element()
         {
-            const string testCode = "<div name='hakan' value=\"12345\">";
-            Assert.IsTrue(Seperator.CanParse(testCode));
-            var result = Seperator.Parse(testCode).ToArray();
+            var testCode = new HtmlContent("<div name='hakan' value=\"12345\">");
+            Assert.IsTrue(Iterate(Seperator).CanParse(testCode));
+            var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1, result.Length);
             var element = result.First();
             Assert.IsInstanceOfType(element, typeof(IHtmlElement));
@@ -81,9 +102,9 @@ namespace Html.Rt.Unit.TagElements
         [TestMethod]
         public void get_attributes_from_single_tag()
         {
-            const string testCode = "<br name='key' value='41323' />";
-            Assert.IsTrue(Seperator.CanParse(testCode), "Seperator.CanParse(testCode)");
-            var result = Seperator.Parse(testCode).ToArray();
+            var testCode = new HtmlContent("<br name='key' value='41323' />");
+            Assert.IsTrue(Iterate(Seperator).CanParse(testCode), "Seperator.CanParse(testCode)");
+            var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1,result.Length);
             var element = result.First();
             Assert.IsInstanceOfType(element, typeof(IHtmlElement));

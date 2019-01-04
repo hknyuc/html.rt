@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace Html.Rt.Seperator
 {
-    public class StyleOrScriptSeperator :IHtmlSeperator
+    public class HtmlCodeSeperator :IHtmlSeperator
     {
         private readonly IHtmlSeperator _elementSeperator = new ElementSeperator();
         public ParseResult Parse(IHtmlContent content)
@@ -43,11 +43,10 @@ namespace Html.Rt.Seperator
                     if (!isMainEndTag) continue;
                     if(escapedStringHtml.IsQuotes(result.From)) continue;
                     isFounded = true;
-                    yield return new Text(content.RootContent.Substring(position, result.From - position));
+                    yield return new Text(content.RootContent.Substring(position, result.From));
                     yield return endTag;
                     break;
                 }
-
             }
 
             if (!isFounded)

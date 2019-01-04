@@ -60,7 +60,7 @@ namespace Html.Rt.Seperator
         {
             var result = base.Next();
             if (result == false) return false;
-            if (!IsQuotes(this.CurrentChar) && this.InQuotes) return true;
+            if (!IsQuotes(this.CurrentChar) && !this.InQuotes) return true;
             if (this.InQuotes && this.Quotes != this.CurrentChar)
                 return this.Next();
             if (this.InQuotes && this.Quotes == this.CurrentChar && this.BeforeChar != '\\')
@@ -76,7 +76,7 @@ namespace Html.Rt.Seperator
                 this.CurrentRange.Set(this.CurrentRange.From, this.Index);
                 this._quonteses.Add(new RangeIndex(this.CurrentRange.From, this.CurrentRange.End));
                 this.CurrentRange.Reset();
-                return base.Next();
+                return this.Next();
             }
             return true;
         }

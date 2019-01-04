@@ -7,15 +7,15 @@ namespace Html.Rt.Unit.Attributes
     [TestClass]
     public class IsAttributeTest
     {
-        public Html.Rt.Seperator.AttributeSeperator Seperator = new AttributeSeperator();
+        public IHtmlSeperator Seperator =  new SeperatorIterator(new AttributeSeperator2());
         
         [TestMethod]
         public void double_quotes_empty_value()
         {
-            var testCode = " value=\"\"";
+            var testCode = new HtmlContent(" value=\"\"");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
-            Assert.AreEqual(result.Length, 1);
+            Assert.AreEqual(1,result.Length);
             var resultAttributes = result.Cast<IAttribute>().ToArray();
             Assert.AreEqual(resultAttributes.Length, 1);
             var attribute = resultAttributes.First();
@@ -27,7 +27,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void double_quotes_single()
         {
-            var testCode = "value=\"1233\"";
+            var testCode = new HtmlContent("value=\"1233\"");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 1);
@@ -41,7 +41,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void double_quotes_more()
         {
-            var testCode = "value=\"1233\" name=\"hakan 1234\"";
+            var testCode = new HtmlContent("value=\"1233\" name=\"hakan 1234\"");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 2);
@@ -58,7 +58,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void double_quotes_doubled_key_attribute()
         {
-            var testCode = "value=\"1233\" value=\"8888\"";
+            var testCode = new HtmlContent("value=\"1233\" value=\"8888\"");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 2);
@@ -75,7 +75,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void double_quotes_in_double_quotes_string()
         {
-            var testCode = @"value=""\""12344""";
+            var testCode = new HtmlContent(@"value=""\""12344""");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 1);
@@ -89,7 +89,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void no_value_in_attribute_single()
         {
-            var testCode = "value";
+            var testCode = new HtmlContent("value");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 1);
@@ -103,7 +103,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void no_value_in_attribute_more()
         {
-            var testCode = "value checked selected";
+            var testCode = new HtmlContent("value checked selected");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 3);
@@ -123,7 +123,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void single_quotes()
         {
-            var testCode = "value='hakan'";
+            var testCode = new HtmlContent("value='hakan'");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 1);
@@ -137,7 +137,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void single_quotes_more()
         {
-            var testCode = "value='27' name='hakan'";
+            var testCode = new HtmlContent("value='27' name='hakan'");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 2);
@@ -155,7 +155,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void single_quotes_in_single_quotes()
         {
-            var testCode = @"value='\'hakan'";
+            var testCode = new HtmlContent(@"value='\'hakan'");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 1);
@@ -169,14 +169,14 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void single_quotes_in_invalid_quotes()
         {
-            var testCode = "value='''";
+            var testCode = new HtmlContent("value='''");
             Assert.IsTrue(Seperator.CanParse(testCode));
         }
 
         [TestMethod]
         public void single_quotes_with_double_quotes()
         {
-            var testCode = "value='27' name=\"hakan\"";
+            var testCode = new HtmlContent("value='27' name=\"hakan\"");
             Assert.IsNotNull(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 2);
@@ -194,7 +194,7 @@ namespace Html.Rt.Unit.Attributes
         [TestMethod]
         public void single_quotes_with_double_quotes2()
         {
-            var testCode = "value='27' name=\"hakan\" class='popup'";
+            var testCode = new HtmlContent("value='27' name=\"hakan\" class='popup'");
             Assert.IsNotNull(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(result.Length, 3);
@@ -209,6 +209,24 @@ namespace Html.Rt.Unit.Attributes
             Assert.AreEqual(attributeTwo.Value, "hakan");
             Assert.AreEqual(attributeThree.Key, "class");
             Assert.AreEqual(attributeThree.Value, "popup");
+        }
+
+        [TestMethod]
+        public void single_with_key_value()
+        {
+            var testCode = new HtmlContent("value='27' checked test=\"\\\"true\"");
+            Assert.IsTrue(Seperator.CanParse(testCode));
+            var result = Seperator.Parse(testCode).ToArray();
+            Assert.AreEqual(3,result.Length);
+            var resulAttributes = result.Cast<IAttribute>().ToArray();
+            var attributeOne = resulAttributes[0];
+            var attributeTwo = resulAttributes[1];
+            var attributeThree = resulAttributes[2];
+            Assert.AreEqual(attributeOne.Key, "value");
+            Assert.AreEqual(attributeOne.Value, "27");
+            Assert.AreEqual(attributeTwo.Key, "checked");
+            Assert.AreEqual(attributeThree.Key, "test");
+            Assert.AreEqual(attributeThree.Value, "\\\"true");
         }
    
     }

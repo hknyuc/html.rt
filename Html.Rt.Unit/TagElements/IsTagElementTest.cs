@@ -172,6 +172,7 @@ namespace Html.Rt.Unit.TagElements
             var textContent = (Text) result[1];
             var endTag = (EndTag) result[2];
             Assert.AreEqual("style", htmlElement.Name);
+            Assert.AreEqual(styleContent.Length, textContent.Markup.Length);
             Assert.AreEqual(styleContent, textContent.Markup);
             Assert.AreEqual("style", endTag.Name);
         }
@@ -217,6 +218,23 @@ namespace Html.Rt.Unit.TagElements
             var attribute = attributes[0];
             Assert.AreEqual("innerHtml",attribute.Key);
             Assert.AreEqual("<div name=\"title\"></div>", attribute.Value);
+            
+        }
+        [TestMethod]
+        public void get_tag_element_when_attributes_have_tag_element2()
+        {
+            const string testCode = "<div innerHtml='<div name=\\'title\\'></div>'>";
+            Assert.IsTrue(Seperator.CanParse(testCode), "Seperator.CanParse(testCode)");
+            var result = Seperator.ParseFromOrigin(testCode).ToArray();
+            Assert.AreEqual(1, result.Length);
+            Assert.IsInstanceOfType(result[0], typeof(IHtmlElement));
+            var htmlElement = (IHtmlElement) result[0];
+            Assert.AreEqual("div", htmlElement.Name);
+            var attributes = htmlElement.Attributes.ToArray();
+            Assert.AreEqual(1, attributes.Length);
+            var attribute = attributes[0];
+            Assert.AreEqual("innerHtml",attribute.Key);
+            Assert.AreEqual("<div name=\\'title\\'></div>", attribute.Value);
             
         }
 
