@@ -228,6 +228,27 @@ namespace Html.Rt.Unit.Attributes
             Assert.AreEqual(attributeThree.Key, "test");
             Assert.AreEqual(attributeThree.Value, "\\\"true");
         }
+
+        [TestMethod]
+        public void fourth_type_attribute()
+        {
+            var testCode = new HtmlContent("Value='52' checked name=\"10\" border=0");
+            Assert.IsTrue(Seperator.CanParse(testCode));
+            var result = Seperator.Parse(testCode).ToArray();
+            Assert.AreEqual(4, result.Length);
+            var resulAttributes = result.Cast<IAttribute>().ToArray();
+            var attributeOne = resulAttributes[0];
+            var attributeTwo = resulAttributes[1];
+            var attributeThree = resulAttributes[2];
+            var attributeFourth = resulAttributes[3];
+            Assert.AreEqual(attributeOne.Key, "Value");
+            Assert.AreEqual(attributeOne.Value, "52");
+            Assert.AreEqual(attributeTwo.Key, "checked");
+            Assert.AreEqual(attributeThree.Key, "name");
+            Assert.AreEqual(attributeThree.Value, "10");
+            Assert.AreEqual(attributeFourth.Key, "border");
+            Assert.AreEqual(attributeFourth.Value,"0");
+        }
    
     }
 }

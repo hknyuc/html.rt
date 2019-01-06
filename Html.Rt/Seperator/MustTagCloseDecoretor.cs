@@ -18,7 +18,7 @@ namespace Html.Rt.Seperator
             return new ParseResult(Decorate(result.Result,content), result.From);
         }
 
-        private bool IsTags(IHtmlElement tag)
+        private bool IsTags(ITag tag)
         {
             return this._tagNames.Any(x => x.Equals(tag.Name, StringComparison.OrdinalIgnoreCase));
         }
@@ -28,7 +28,7 @@ namespace Html.Rt.Seperator
             while (enumerator.MoveNext())
             {
                 var markup = enumerator.Current;
-                if (!(markup is IHtmlElement isTag))
+                if (!(markup is ITag isTag))
                 {
                     yield return markup;
                     continue;
@@ -47,7 +47,7 @@ namespace Html.Rt.Seperator
             enumerator.Dispose();
         }
 
-        private static IEnumerable<IHtmlMarkup> FoundEndTag(IHtmlElement isTag,IEnumerator<IHtmlMarkup> enumerator,IHtmlContent htmlContent)
+        private static IEnumerable<IHtmlMarkup> FoundEndTag(ITag isTag,IEnumerator<IHtmlMarkup> enumerator,IHtmlContent htmlContent)
         {
             var position = htmlContent.Index;
             var lastPosition = position;

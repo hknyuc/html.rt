@@ -7,7 +7,7 @@ using System.Threading;
 namespace Html.Rt.Seperator
 {
     
-    public class EscapeStringHtmlContent :HtmlContentDecorator
+    public class  EscapeStringHtmlContent :HtmlContentDecorator
     {
         private bool _inQuotes = false;
         private List<RangeIndex> _quonteses = new List<RangeIndex>();
@@ -58,6 +58,7 @@ namespace Html.Rt.Seperator
 
         public override bool Next()
         {
+            var content = this.Content;
             var result = base.Next();
             if (result == false) return false;
             if (!IsQuotes(this.CurrentChar) && !this.InQuotes) return true;

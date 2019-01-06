@@ -35,7 +35,7 @@ namespace Html.Rt.Seperator
             {
                 if(!match.Success) continue;
                 var groups = match.Groups.ToArray();
-                yield return new AttributeElement(content,groups[1].Value,PruneString(groups[2]?.Value));
+                yield return new AttributeElement(content,groups[1].Value,PruneString(groups[2]?.Value),default(char));
 
             }
         }
@@ -58,6 +58,7 @@ namespace Html.Rt.Seperator
             InKey=1,
             WaitValue=2,
             InBeginQuotes=3,
+            InPureValue=4
     
         }
 
@@ -97,7 +98,7 @@ namespace Html.Rt.Seperator
                     if (char.IsWhiteSpace(content.CurrentChar) && !string.IsNullOrEmpty(key))
                     {
                 
-                        yield return new AttributeElement(all, key, value);
+                        yield return new AttributeElement(all, key, value,quotes);
                         Clear();
                         continue;
                     }
@@ -116,14 +117,32 @@ namespace Html.Rt.Seperator
                     {
                         status = Status.InBeginQuotes;
                         quotes = content.CurrentChar;
+                    }else if (!char.IsWhiteSpace(content.CurrentChar) && !InQuotes(content.CurrentChar))
+                    {
+                        quotes = default(char);
+                        status = Status.InPureValue;
+                        value += content.CurrentChar;
                     }
                 }
                 else if (status == Status.InBeginQuotes)
                 {
                     if (content.CurrentChar == quotes && content.BeforeChar != '\\')
                     {
-                        yield return new AttributeElement(all, key, value);
+                        yield return new AttributeElement(all, key, value,quotes);
                         status = Status.InKey;
+                        Clear();
+                    }
+                    else
+                    {
+                        value += content.CurrentChar;
+                    }
+                }else if (status == Status.InPureValue)
+                {
+                    if (char.IsWhiteSpace(content.CurrentChar))
+                    {
+                       
+                        status = Status.InKey;
+                        yield return new AttributeElement(all, key, value, quotes);
                         Clear();
                     }
                     else
@@ -134,7 +153,7 @@ namespace Html.Rt.Seperator
             }
 
             if (!string.IsNullOrWhiteSpace(key))
-                yield return new AttributeElement(all, key, value);
+                yield return new AttributeElement(all, key, value, quotes);
         } 
     }    
     
@@ -143,13 +162,15 @@ namespace Html.Rt.Seperator
     {
         public string Key { get; }
         public string Value { get; }
+        public char Quotes { get; }
         public string Markup { get; }
 
-        public AttributeElement(string markup,string key, string value)
+        public AttributeElement(string markup,string key, string value,char quotes)
         {
             this.Key = key;
             this.Value = value;
             this.Markup = markup;
+            this.Quotes = quotes;
         }
 
    

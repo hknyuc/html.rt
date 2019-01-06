@@ -688,23 +688,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hakanyu\\.nuget\\packages\\": {},
+    "C:\\Users\\Pc-Arete\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\Html.Rt.csproj",
+      "projectUniqueName": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\Html.Rt.csproj",
       "projectName": "Html.Rt",
-      "projectPath": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\Html.Rt.csproj",
-      "packagesPath": "C:\\Users\\Hakanyu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\obj\\",
+      "projectPath": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\Html.Rt.csproj",
+      "packagesPath": "C:\\Users\\Pc-Arete\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Hakanyu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Pc-Arete\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -8,6 +8,10 @@ namespace Html.Rt
             this.Markup = content;
         }
 
+        public override string ToString()
+        {
+            return $"[text :{this.Markup}]";
+        }
     }
 
     public class TextContent : Text

@@ -4,5 +4,6 @@ namespace Html.Rt
     {
         string Key { get; }
         string Value { get; }
+        char Quotes { get; }
     }
 }

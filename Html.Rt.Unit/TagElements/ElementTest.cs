@@ -18,8 +18,8 @@ namespace Html.Rt.Unit.TagElements
             var elements = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(1,elements.Length);
             var element = elements.First();
-            Assert.IsInstanceOfType(element, typeof(IHtmlElement));
-            var htmlElement = (IHtmlElement) element;
+            Assert.IsInstanceOfType(element, typeof(ITag));
+            var htmlElement = (ITag) element;
             Assert.AreEqual("div",htmlElement.Name);
         }
 
@@ -38,7 +38,7 @@ namespace Html.Rt.Unit.TagElements
             Assert.IsTrue(Iterate(Seperator).CanParse(testCode));
             var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1, result.Length);
-            var tagElement = (IHtmlElement) result[0];
+            var tagElement = (ITag) result[0];
             Assert.AreEqual("div", tagElement.Name);
             Assert.AreEqual(1, tagElement.Attributes.Count());
             var attribute =  (IAttribute)tagElement.Attributes.ToArray()[0];
@@ -55,8 +55,8 @@ namespace Html.Rt.Unit.TagElements
             var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1, result.Length);
             var element = result.First();
-            Assert.IsInstanceOfType(element, typeof(IHtmlElement));
-            var htmlElement = (IHtmlElement) element;
+            Assert.IsInstanceOfType(element, typeof(ITag));
+            var htmlElement = (ITag) element;
             Assert.AreEqual("div", htmlElement.Name);
         }
 
@@ -74,8 +74,8 @@ namespace Html.Rt.Unit.TagElements
             var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1, result.Length);
             var element = result.First();
-            Assert.IsInstanceOfType(element, typeof(IHtmlElement));
-            var htmlElement = (IHtmlElement) element;
+            Assert.IsInstanceOfType(element, typeof(ITag));
+            var htmlElement = (ITag) element;
             var attributes = htmlElement.Attributes.ToArray();
             Assert.AreEqual(2, attributes.Length);
             var attributeOne = attributes[0];
@@ -94,8 +94,8 @@ namespace Html.Rt.Unit.TagElements
             var result = Seperator.Parse(testCode).ToArray();
             Assert.AreEqual(1, result.Length);
             var element = result.First();
-            Assert.IsInstanceOfType(element, typeof(IHtmlElement));
-            var htmlElement = (IHtmlElement) element;
+            Assert.IsInstanceOfType(element, typeof(ITag));
+            var htmlElement = (ITag) element;
             Assert.AreEqual("br", htmlElement.Name);
         }
 
@@ -107,8 +107,8 @@ namespace Html.Rt.Unit.TagElements
             var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1,result.Length);
             var element = result.First();
-            Assert.IsInstanceOfType(element, typeof(IHtmlElement));
-            var htmlElement = (IHtmlElement) element;
+            Assert.IsInstanceOfType(element, typeof(ITag));
+            var htmlElement = (ITag) element;
             var attributes = htmlElement.Attributes.ToArray();
             var attributeOne = attributes[0];
             var attributeTwo = attributes[1];
@@ -129,7 +129,19 @@ namespace Html.Rt.Unit.TagElements
             var endTag = (EndTag) result[0];
             Assert.AreEqual("div", endTag.Name);
         }
-        
+
+
+        [TestMethod]
+        public void get_tag()
+        {
+            var testCode = new HtmlContent("<a href=\"index.php?option=com_content&view=frontpage&Itemid=1\">");
+            Assert.IsTrue(Iterate(Seperator).CanParse(testCode),"Seperator.CanParse(testCode)");
+            var result = Iterate(Seperator).Parse(testCode).ToArray();
+            Assert.AreEqual(1, result.Length);
+            Assert.IsInstanceOfType(result[0], typeof(ITag));
+            var tagElement = (ITag) result[0];
+            Assert.AreEqual("a", tagElement.Name);
+        }
   
 
  

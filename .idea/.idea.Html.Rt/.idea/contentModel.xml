@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Hakanyu\.nuget\packages\mstest.testadapter\1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
-    <e p="C:\Users\Hakanyu\.nuget\packages\mstest.testadapter\1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
-    <e p="C:\Users\Hakanyu\.nuget\packages\mstest.testadapter\1.3.2\build\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
-    <e p="C:\Users\Hakanyu\.Rider2018.2\config\scratches" t="IncludeRecursive" />
-    <e p="C:\Users\Hakanyu\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Hakanyu\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Html.Rt.13145063.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Hakanyu\Documents\Github\Html.Rt" t="IncludeFlat">
+    <e p="C:\Users\Pc-Arete\.nuget\packages\mstest.testadapter\1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\Pc-Arete\.nuget\packages\mstest.testadapter\1.3.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+    <e p="C:\Users\Pc-Arete\.nuget\packages\mstest.testadapter\1.3.2\build\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
+    <e p="C:\Users\Pc-Arete\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Pc-Arete\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Html.Rt.-656623861.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Pc-Arete\Documents\Github\Html.Rt" t="IncludeFlat">
       <e p="Html.Rt" t="IncludeRecursive">
+        <e p="Attributes.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="CacheEnumerable.cs" t="Include" />
         <e p="Comment.cs" t="Include" />
+        <e p="Document.cs" t="Include" />
         <e p="EndTag.cs" t="Include" />
+        <e p="Exceptions" t="Include">
+          <e p="ParseErrorException.cs" t="Include" />
+        </e>
         <e p="Html.Rt.csproj" t="IncludeRecursive" />
-        <e p="HtmlElement.cs" t="Include" />
+        <e p="HtmlXPathNavigator.cs" t="Include" />
         <e p="IAttribute.cs" t="Include" />
-        <e p="IHtmlElement.cs" t="Include" />
         <e p="IHtmlMarkup.cs" t="Include" />
+        <e p="ITag.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.1" t="Include">
@@ -43,6 +47,7 @@
           <e p="StandartHtmlSeperator.cs" t="Include" />
           <e p="TextSeperator.cs" t="Include" />
         </e>
+        <e p="Tag.cs" t="Include" />
         <e p="Text.cs" t="Include" />
       </e>
       <e p="Html.Rt.sln" t="IncludeFlat" />
@@ -54,6 +59,10 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Comments" t="Include">
           <e p="IsCommentTest.cs" t="Include" />
+        </e>
+        <e p="Files" t="Include">
+          <e p="tdk.html" t="Include" />
+          <e p="tdk3.html" t="Include" />
         </e>
         <e p="Html.Rt.Unit.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
@@ -67,6 +76,7 @@
         <e p="TagElements" t="Include">
           <e p="ElementTest.cs" t="Include" />
           <e p="IsTagElementTest.cs" t="Include" />
+          <e p="PageTest.cs" t="Include" />
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />

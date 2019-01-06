@@ -9,5 +9,10 @@ namespace Html.Rt
             this.Name = name;
             this.Markup = markup;
         }
+
+        public override string ToString()
+        {
+            return $"[endTag :{this.ToHtml()}]";
+        }
     }
 }

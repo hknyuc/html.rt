@@ -1,9 +1,12 @@
 namespace Html.Rt
 {
-    public class RawText : Text
+    public class RawText : IHtmlMarkup
     {
-        public RawText(string content) : base(content)
+        public string Markup { get; }
+        public RawText(string content)
         {
+            this.Markup = content;
         }
+
     }
 }

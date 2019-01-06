@@ -8,24 +8,34 @@ namespace Html.Rt.Seperator
 {
     public class HtmlCodeSeperator :IHtmlSeperator
     {
-        private readonly IHtmlSeperator _elementSeperator = new ElementSeperator();
+        private readonly IHtmlSeperator _elementSeperator;
+
+        public HtmlCodeSeperator(IHtmlSeperator mainSeperator)
+        {
+            this._elementSeperator = new ElementSeperator(mainSeperator);
+        }
+
+        public HtmlCodeSeperator()
+        {
+            this._elementSeperator = new ElementSeperator();
+        }
         public ParseResult Parse(IHtmlContent content)
         {
             var result = _elementSeperator.Parse(content);
             if (!result.IsSuccess) return result;
             var first = result.First();
-            var tagElement = first as IHtmlElement;
+            var tagElement = first as ITag;
             if (tagElement == null || !IsSyleOrScript(tagElement)) return new ParseResult(new [] {first}, result.From);
-            return new ParseResult(GetResult(tagElement,  content), content.From);
+            return new ParseResult(GetResult(tagElement, content), result.From);
         }
 
-        private static bool IsSyleOrScript(IHtmlElement element)
+        private static bool IsSyleOrScript(ITag element)
         {
             return new string[] {"script", "style"}.Any(x =>
                 x.Equals(element.Name, StringComparison.OrdinalIgnoreCase));
         }
 
-        private IEnumerable<IHtmlMarkup> GetResult(IHtmlElement mainTag, IHtmlContent content)
+        private IEnumerable<IHtmlMarkup> GetResult(ITag mainTag, IHtmlContent content)
         {
             yield return mainTag;
             content.Outstrip();
@@ -39,18 +49,19 @@ namespace Html.Rt.Seperator
                 var first = result.Result.First();
                 if (first is EndTag endTag)
                 {
+                    var c = escapedStringHtml.Content;
                     var isMainEndTag = endTag.Name.Equals(mainTag.Name, StringComparison.OrdinalIgnoreCase);
                     if (!isMainEndTag) continue;
-                    if(escapedStringHtml.IsQuotes(result.From)) continue;
+                    if(escapedStringHtml.IsQuotes(result.From+content.From)) continue;
                     isFounded = true;
-                    yield return new Text(content.RootContent.Substring(position, result.From));
+                    yield return new RawText(content.RootContent.Substring(position, result.From));
                     yield return endTag;
                     break;
                 }
             }
 
             if (!isFounded)
-                yield return new Text(escapedStringHtml.Content);
+                yield return new RawText(escapedStringHtml.Content);
         }
 
     }
