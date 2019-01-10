@@ -58,28 +58,38 @@ namespace Html.Rt.Seperator
 
         public override bool Next()
         {
-            var content = this.Content;
-            var result = base.Next();
-            if (result == false) return false;
-            if (!IsQuotes(this.CurrentChar) && !this.InQuotes) return true;
-            if (this.InQuotes && this.Quotes != this.CurrentChar)
-                return this.Next();
-            if (this.InQuotes && this.Quotes == this.CurrentChar && this.BeforeChar != '\\')
+            while (true)
             {
-                this._inQuotes = false;
-                this.CurrentRange.Set(Index, 0);
-                return base.Next();
+
+                var result = base.Next();
+                if (result == false) return false;
+                if (!IsQuotes(this.CurrentChar) && !this.InQuotes) return true;
+                if (this.InQuotes && this.Quotes != this.CurrentChar)
+                {
+                    /*
+                    if (this.Index > 69600)
+                        System.IO.File.WriteAllText("count.txt", this.Index.ToString());
+                        */
+                    continue;
+                }
+
+                if (this.InQuotes && this.Quotes == this.CurrentChar && this.BeforeChar != '\\')
+                {
+                    this._inQuotes = false;
+                    this.CurrentRange.Set(Index, 0);
+                    return true;
+                }
+
+                if (IsQuotes(this.CurrentChar) && this.BeforeChar != '\\')
+                {
+                    this._inQuotes = true;
+                    this._quotes = this.CurrentChar;
+                    this.CurrentRange.Set(this.CurrentRange.From, this.Index);
+                    this._quonteses.Add(new RangeIndex(this.CurrentRange.From, this.CurrentRange.End));
+                    this.CurrentRange.Reset();
+                    continue;
+                }
             }
-            if (IsQuotes(this.CurrentChar) && this.BeforeChar != '\\')
-            {
-                this._inQuotes = true;
-                this._quotes = this.CurrentChar;
-                this.CurrentRange.Set(this.CurrentRange.From, this.Index);
-                this._quonteses.Add(new RangeIndex(this.CurrentRange.From, this.CurrentRange.End));
-                this.CurrentRange.Reset();
-                return this.Next();
-            }
-            return true;
         }
     }
 }

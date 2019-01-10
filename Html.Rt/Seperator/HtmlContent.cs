@@ -81,7 +81,6 @@ namespace Html.Rt.Seperator
                     return this._lastCacheContent;
                 }
 
-                var max = this.Index - this.From;
                 this._lastCacheContent = this._rootContent.Substring(this.From, this.Index-this.From);
                 if (this.CurrentChar != default(char))
                     this._lastCacheContent += this.CurrentChar; 
@@ -180,102 +179,102 @@ namespace Html.Rt.Seperator
 
     public class HtmlContentDecorator : IHtmlContent
     {
-        private IHtmlContent _content;
+        protected IHtmlContent HtmlContent { get; }
 
         public string RootContent
         {
-            get { return this._content.RootContent; }
+            get { return this.HtmlContent.RootContent; }
         }
 
         public int From
         {
-            get { return this._content.From; }
+            get { return this.HtmlContent.From; }
         }
 
         public int Index
         {
-            get { return this._content.Index; }
+            get { return this.HtmlContent.Index; }
         }
 
         public char CurrentChar
         {
-            get { return this._content.CurrentChar; }
+            get { return this.HtmlContent.CurrentChar; }
         }
 
         public char BeforeChar
         {
-            get { return this._content.BeforeChar; }
+            get { return this.HtmlContent.BeforeChar; }
         }
 
         public char NextChar
         {
-            get { return this._content.NextChar; }
+            get { return this.HtmlContent.NextChar; }
         }
 
 
         public string Content
         {
-            get { return this._content.Content; }
+            get { return this.HtmlContent.Content; }
         }
 
         public int StartIndex
         {
-            get { return this._content.StartIndex; }
+            get { return this.HtmlContent.StartIndex; }
         }
 
         public string NextContent
         {
-            get { return this._content.Content; }
+            get { return this.HtmlContent.Content; }
         }
 
         public HtmlContentDecorator(IHtmlContent content)
         {
-            this._content = content;
+            this.HtmlContent = content;
         }
         
-        public object Clone()
+        public virtual object Clone()
         {
-            return new HtmlContentDecorator((IHtmlContent)this._content.Clone());
+            return new HtmlContentDecorator((IHtmlContent)this.HtmlContent.Clone());
         }
 
         public virtual bool NextTo(int index)
         {
-            return this._content.NextTo(index);
+            return this.HtmlContent.NextTo(index);
         }
 
         public virtual bool NextTo(string content)
         {
-            return this._content.NextTo(content);
+            return this.HtmlContent.NextTo(content);
         }
 
         public virtual int NextIndexOf(string content)
         {
-            return this._content.NextIndexOf(content);
+            return this.HtmlContent.NextIndexOf(content);
         }
 
         public virtual bool BackTo(int index)
         {
-            return this._content.BackTo(index);
+            return this.HtmlContent.BackTo(index);
         }
 
         public virtual void JumpLast()
         {
-            this._content.JumpLast();
+            this.HtmlContent.JumpLast();
         }
 
         public virtual void Outstrip()
         {
-            this._content.Outstrip();
+            this.HtmlContent.Outstrip();
         }
 
         public virtual bool Next()
         {
-            return this._content.Next();
+            return this.HtmlContent.Next();
         }
 
         public virtual void Reset()
         {
-            this._content.Reset();
+            this.HtmlContent.Reset();
         }
     }
 }

@@ -40,6 +40,11 @@ namespace Html.Rt.Seperator
             var textContent = new TextContent();
             while (content.Next())
             {
+                if (content.Index == 5000)
+                {
+                    var s = content.Index;
+                    
+                }
                 var seperator = GetSeperator(content);
                 if (seperator == null)
                     textContent.SetContent(content.Content);

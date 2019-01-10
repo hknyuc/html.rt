@@ -249,6 +249,14 @@ namespace Html.Rt.Unit.Attributes
             Assert.AreEqual(attributeFourth.Key, "border");
             Assert.AreEqual(attributeFourth.Value,"0");
         }
+
+        [TestMethod]
+        public void invalid_attributes_value()
+        {
+            var testCode = new HtmlContent(TestUtility.GetFile("invalidCh_attribute.txt"));
+            Assert.IsTrue(Seperator.CanParse(testCode));
+            var result = Seperator.Parse(testCode).ToArray();
+        }
    
     }
 }

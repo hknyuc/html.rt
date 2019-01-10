@@ -1,22 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Xml;
-using System.Xml.XPath;
 using Html.Rt.Seperator;
-using System.Linq;
 namespace Html.Rt
 {
     public class Document :IEnumerable<IHtmlMarkup>
     {
 
-        private string _content;
+        private readonly string _content;
+        private readonly IHtmlContent _htmlContent;
         public Document(string content)
         {
             this._content = content;
         }
-        
+
+        public Document(IHtmlContent content)
+        {
+            this._htmlContent = content;
+        }
+
 
         IEnumerator<IHtmlMarkup> IEnumerable<IHtmlMarkup>.GetEnumerator()
         {
@@ -25,7 +27,13 @@ namespace Html.Rt
 
         private IEnumerator<IHtmlMarkup> GetEnumerable()
         {
-            return new StandartHtmlSeperator().Parse(new HtmlContent(this._content)).Result.GetEnumerator();
+            return new StandartHtmlSeperator().Parse(this.GetHtmlContent()).Result.GetEnumerator();
+        }
+
+        private IHtmlContent GetHtmlContent()
+        {
+            if (this._htmlContent != null) return (IHtmlContent) this._htmlContent.Clone();
+            return new HtmlContent(this._content);
         }
 
 

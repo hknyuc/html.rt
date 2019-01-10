@@ -1,7 +1,11 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Html.Rt.Seperator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Html.Rt.Unit.TagElements
@@ -26,14 +30,39 @@ namespace Html.Rt.Unit.TagElements
 
         }
 
+        [TestMethod]
+        public void twitter()
+        {
+            var file = ReadFile("twitter.html");
+            var observerableHtml = new ObservabletHtmlContent(file);
+
+            var document = NewDocument(observerableHtml);
+            var all = new List<IHtmlMarkup>();
+            var count = 0;
+            foreach (IHtmlMarkup i in document)
+            {
+                if (count == 1429)
+                {
+                    
+                }
+                all.Add(i);
+                count++;
+
+            }
+        }
+
 
         private static string ReadFile(string path)
         {
-            string r = Path.Combine(@"C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt.Unit", @"Files\" + path);
-            return System.IO.File.ReadAllText(r);
+            return TestUtility.GetFile(path);
         }
 
         private Document NewDocument(string content)
+        {
+            return new Document(content);
+        }
+
+        private Document NewDocument(IHtmlContent content)
         {
             return new Document(content);
         }
