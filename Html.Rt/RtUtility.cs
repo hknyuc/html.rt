@@ -45,9 +45,21 @@ namespace Html.Rt
         public static string ToHtml(this ITag tag)
         {
             var result = "<" + tag.Name;
-            var attributes = tag.Attributes.ToArray();
-            var attrStr = attributes.Length != 0
-                ? attributes.Aggregate("",
+            return result + tag.Attributes.ToHtml() + ">";
+        }
+
+        public static string ToHtml(this EndTag endTag)
+        {
+            return "</" + endTag.Name + ">";
+            
+        }
+
+
+        public static string ToHtml(this Attributes attributes)
+        {
+            var all = attributes.ToArray();
+            return all.Length!= 0
+                ? all.Aggregate("",
                     (aggretor, current) =>
                     {
                         var value = string.Empty;
@@ -59,13 +71,9 @@ namespace Html.Rt
                                    : ""));
                     })
                 : "";
-            return result + attrStr + ">";
         }
-
-        public static string ToHtml(this EndTag endTag)
-        {
-            return "</" + endTag.Name + ">";
-        }
+        
+        
 
         public static string GetText(this ITag source)
         {

@@ -43,6 +43,9 @@ namespace Html.Rt.Unit.TagElements
             Assert.AreEqual(1, tagElement.Attributes.Count());
             var attribute =  (IAttribute)tagElement.Attributes.ToArray()[0];
             Assert.AreEqual("name", attribute.Key);
+            
+            
+            
 
         }
 
@@ -77,13 +80,15 @@ namespace Html.Rt.Unit.TagElements
             Assert.IsInstanceOfType(element, typeof(ITag));
             var htmlElement = (ITag) element;
             var attributes = htmlElement.Attributes.ToArray();
-            Assert.AreEqual(2, attributes.Length);
+            Assert.AreEqual(2, attributes.Length,htmlElement.Attributes.ToHtml());
             var attributeOne = attributes[0];
             var attributeTwo = attributes[1];
             Assert.AreEqual("name", attributeOne.Key);
             Assert.AreEqual("hakan", attributeOne.Value);
             Assert.AreEqual("value", attributeTwo.Key);
             Assert.AreEqual("12345", attributeTwo.Value);
+            
+           
         }
 
         [TestMethod]

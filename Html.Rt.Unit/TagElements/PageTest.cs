@@ -21,6 +21,7 @@ namespace Html.Rt.Unit.TagElements
         }
         
         [TestMethod]
+        
         public void tdk2()
         {
             var file = ReadFile("tdk3.html");
@@ -36,19 +37,10 @@ namespace Html.Rt.Unit.TagElements
             var file = ReadFile("twitter.html");
             var observerableHtml = new ObservabletHtmlContent(file);
 
-            var document = NewDocument(observerableHtml);
-            var all = new List<IHtmlMarkup>();
-            var count = 0;
-            foreach (IHtmlMarkup i in document)
-            {
-                if (count == 1429)
-                {
-                    
-                }
-                all.Add(i);
-                count++;
+            var document = NewDocument(observerableHtml).Take(1000).ToArray();
 
-            }
+
+
         }
 
 

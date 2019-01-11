@@ -22,7 +22,7 @@ namespace Html.Rt.Seperator
         bool Next();
         void Reset();
     }
-    public class HtmlContent :IHtmlContent
+    public class HtmlContent3 :IHtmlContent
     {
         private int _index = -1;
         /// <summary>
@@ -104,7 +104,7 @@ namespace Html.Rt.Seperator
         private string _rootContent = string.Empty;
         public string RootContent => _rootContent;
 
-        public HtmlContent(string content)
+        public HtmlContent3(string content)
         {
             this._rootContent = content;
             this._from =0;
@@ -113,6 +113,7 @@ namespace Html.Rt.Seperator
 
         public bool NextTo(int index)
         {
+    
             var isDone = index >= this._rootContent.Length;
             if (index < this._rootContent.Length)
                 this._index = index;
@@ -169,7 +170,7 @@ namespace Html.Rt.Seperator
 
         public object Clone()
         {
-            var result =  new HtmlContent(this._rootContent);
+            var result =  new HtmlContent3(this._rootContent);
             result._from = this.From;
             result._index = this.Index;
             return result;
