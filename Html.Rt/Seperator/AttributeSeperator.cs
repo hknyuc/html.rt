@@ -2,11 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
+using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 
 namespace Html.Rt.Seperator
 {
@@ -16,7 +13,7 @@ namespace Html.Rt.Seperator
             new Regex(@"\s*([a-zA-Z][\w:\-]*)\s*(?:\s*=(\s*""(?:\\""|[^""])*""|\s*'(?:\\'|[^'])*'|[^\s>]+))?");
         private bool CanParse(IHtmlContent content)
         {
-            return this._regex.IsMatch(content.Content);
+            return this._regex.IsMatch(content.Content.ToString());
         }
 
         //("|')((?:\\\1|(?:(?!\1).))*)\1
@@ -25,7 +22,7 @@ namespace Html.Rt.Seperator
             var canParse = this.CanParse(content);
             if(!canParse)
                 return new ParseResult();
-            return new ParseResult(GetParsed(content.Content), 0);
+            return new ParseResult(GetParsed(content.Content.ToString()), 0);
         }
 
         private IEnumerable<IHtmlMarkup> GetParsed(string content)
@@ -34,7 +31,7 @@ namespace Html.Rt.Seperator
             foreach (Match match in result)
             {
                 if(!match.Success) continue;
-                var groups = match.Groups.ToArray();
+                var groups = match.Groups;
                 yield return new AttributeElement(content,groups[1].Value,PruneString(groups[2]?.Value),default(char));
 
             }
@@ -76,29 +73,29 @@ namespace Html.Rt.Seperator
         private static IEnumerable<IHtmlMarkup> GetAttributes(IHtmlContent content)
         {
             var status = Status.InKey;
-            var key = string.Empty;
-            var value = string.Empty;
+            var key = new StringBuilder();
+            var value = new StringBuilder();
             var quotes = default(char);
-            var all = string.Empty;
+            var allStringBuilder = new StringBuilder();
 
             void Clear()
             {
-                key = string.Empty;
-                all = string.Empty;
-                value = string.Empty;
+                key.Clear();
+                allStringBuilder.Clear();
+                value.Clear();
                 quotes = default(char);
             }
 
             while (content.Next())
             {
-                all += content.CurrentChar;
-                if(status == Status.InKey && string.IsNullOrEmpty(key) && char.IsWhiteSpace(content.CurrentChar)) continue;
+                allStringBuilder.Append(content.CurrentChar);
+                if(status == Status.InKey && key.Length == 0 && char.IsWhiteSpace(content.CurrentChar)) continue;
                 if (status == Status.InKey)
                 {
-                    if (char.IsWhiteSpace(content.CurrentChar) && !string.IsNullOrEmpty(key))
+                    if (char.IsWhiteSpace(content.CurrentChar) && key.Length != 0)
                     {
                 
-                        yield return new AttributeElement(all, key, value,quotes);
+                        yield return new AttributeElement(allStringBuilder.ToString(), key.ToString(), value.ToString(),quotes);
                         Clear();
                         continue;
                     }
@@ -108,7 +105,7 @@ namespace Html.Rt.Seperator
                         status = Status.WaitValue;
                         continue;
                     }
-                    key += content.CurrentChar;
+                    key.Append(content.CurrentChar);
                    
                 }
                 else if (status == Status.WaitValue)
@@ -121,20 +118,20 @@ namespace Html.Rt.Seperator
                     {
                         quotes = default(char);
                         status = Status.InPureValue;
-                        value += content.CurrentChar;
+                        value.Append(content.CurrentChar);
                     }
                 }
                 else if (status == Status.InBeginQuotes)
                 {
                     if (content.CurrentChar == quotes && content.BeforeChar != '\\')
                     {
-                        yield return new AttributeElement(all, key, value,quotes);
+                        yield return new AttributeElement(allStringBuilder.ToString(), key.ToString(), value.ToString(),quotes);
                         status = Status.InKey;
                         Clear();
                     }
                     else
                     {
-                        value += content.CurrentChar;
+                        value.Append(content.CurrentChar);
                     }
                 }else if (status == Status.InPureValue)
                 {
@@ -142,18 +139,18 @@ namespace Html.Rt.Seperator
                     {
                        
                         status = Status.InKey;
-                        yield return new AttributeElement(all, key, value, quotes);
+                        yield return new AttributeElement(allStringBuilder.ToString(), key.ToString(), value.ToString(), quotes);
                         Clear();
                     }
                     else
                     {
-                        value += content.CurrentChar;
+                        value.Append(content.CurrentChar);
                     }
                 }
             }
 
-            if (!string.IsNullOrWhiteSpace(key))
-                yield return new AttributeElement(all, key, value, quotes);
+            if (key.Length != 0)
+                yield return new AttributeElement(allStringBuilder.ToString(), key.ToString(), value.ToString(), quotes);
         } 
     }    
     

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
 using Html.Rt.Seperator;
 
 namespace Html.Rt
@@ -16,7 +17,7 @@ namespace Html.Rt
             return seperator.CanParse(c);
         }
 
-        public static bool CanParse(this IHtmlSeperator seperator,HtmlContent content)
+        public static bool CanParse(this IHtmlSeperator seperator,IHtmlContent content)
         {
             return seperator.Parse(content).IsSuccess;
         }
@@ -54,6 +55,22 @@ namespace Html.Rt
             
         }
 
+        public static string GetNodeString(this Attributes attributes)
+        {
+            var sp = new StringBuilder();
+            var count = 1;
+            foreach (var attribute in attributes)
+            {
+                var value = attribute.Value;
+                var isDefault = attribute.Quotes == default(char);
+                if (!isDefault)
+                    value = attribute.Quotes.ToString() + attribute.Value + attribute.Quotes.ToString();
+                sp.Append(Environment.NewLine+"["+count+"]"+attribute.Key + (!isDefault ? "=" + value : ""));
+                count++;
+            }
+
+            return sp.ToString();
+        }
 
         public static string ToHtml(this Attributes attributes)
         {

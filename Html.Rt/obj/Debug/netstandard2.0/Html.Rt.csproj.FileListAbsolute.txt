@@ -1,0 +1,9 @@
+C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt\obj\Debug\netstandard2.0\Html.Rt.csprojAssemblyReference.cache
+C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt\obj\Debug\netstandard2.0\Html.Rt.csproj.CoreCompileInputs.cache
+C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt\obj\Debug\netstandard2.0\Html.Rt.AssemblyInfoInputs.cache
+C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt\obj\Debug\netstandard2.0\Html.Rt.AssemblyInfo.cs
+C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt\bin\Debug\netstandard2.0\Html.Rt.deps.json
+C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt\bin\Debug\netstandard2.0\Html.Rt.dll
+C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt\bin\Debug\netstandard2.0\Html.Rt.pdb
+C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt\obj\Debug\netstandard2.0\Html.Rt.dll
+C:\Users\Pc-Arete\Documents\github\html.rt\Html.Rt\obj\Debug\netstandard2.0\Html.Rt.pdb

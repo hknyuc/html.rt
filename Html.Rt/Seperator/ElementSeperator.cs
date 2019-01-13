@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
-using Html.Rt.Exceptions;
 
 namespace Html.Rt.Seperator
 {
@@ -80,8 +77,8 @@ namespace Html.Rt.Seperator
 */
     public class ElementSeperator : IHtmlSeperator
     {
-        private readonly Regex _endRegex = new Regex(@"<\/([a-zA-Z][a-zA-Z0-9]*)\s*>$");
-        private readonly Regex _startRegex = new Regex("<([a-zA-Z][a-zA-Z0-9]*)\\s*(\\s+|\\/>|>)");
+        internal  static readonly Regex _endRegex = new Regex(@"<\/([a-zA-Z][a-zA-Z0-9]*)\s*>$");
+        internal  static readonly Regex _startRegex = new Regex("<([a-zA-Z][a-zA-Z0-9]*)\\s*(\\s+|\\/>|>)$");
 
         private IHtmlSeperator _mainSeperator;
         public ElementSeperator(IHtmlSeperator seperator)
@@ -94,22 +91,22 @@ namespace Html.Rt.Seperator
             this._mainSeperator = new EmptySeperator();
         }
         
-        private bool IsEndTag(string content)
+        private bool IsEndTag(string content,int startat)
         {
-            return this._endRegex.IsMatch(content);
+            return _endRegex.IsMatch(content,startat);
         }
 
-        private bool IsTagElement(string content)
+        private bool IsTagElement(string content,int startat)
         {
-            return this._startRegex.IsMatch(content);
+            return _startRegex.IsMatch(content,startat);
         }
 
 
         private IEnumerable<IHtmlMarkup> GetEndTagElement(IHtmlContent content,RefIndex refIndex)
         {
-            var match = this._endRegex.Match(content.Content);
+            var match = _endRegex.Match(content.Content.ToString());
             refIndex.Index = match.Index;
-            yield return new EndTag(content.Content, match.Groups[1].Value);
+            yield return new EndTag(content.Content.ToString(), match.Groups[1].Value);
         }
 
         private bool NoChildElements(string tag)
@@ -153,12 +150,12 @@ namespace Html.Rt.Seperator
 
         private IEnumerable<IHtmlMarkup> GetTagElement(IHtmlContent content, RefIndex refIndex)
         {
-            var matchResult = this._startRegex.Match(content.Content);
+            var matchResult = _startRegex.Match(content.Content.ToString());
             var name = matchResult.Groups[1].Value;
             refIndex.Index =  matchResult.Index;
             if (content.CurrentChar == '>')
             {
-                yield return new Tag(content.Content, name, ArraySegment<IAttribute>.Empty, GetElements(name, CloneContent(content)));
+                yield return new Tag(content.Content.ToString(), name, Array.Empty<IAttribute>(), GetElements(name, CloneContent(content)));
                 yield break;
 
             }   
@@ -167,9 +164,9 @@ namespace Html.Rt.Seperator
             IHtmlContent currentContent = content;
             if (beginPosition < content.Index)
                 currentContent =
-                    new HtmlContent(content.RootContent.Substring(beginPosition, content.Index - beginPosition));
+                    new HtmlContent(content.RootContent.Substring(beginPosition,  content.Index - beginPosition));
             var attributes = new AttributeCollection(GetAttributes(currentContent)).ToArray();
-            yield return new Tag(content.Content,name,attributes,GetElements(name,CloneContent(currentContent)));
+            yield return new Tag(content.Content.ToString(),name,attributes,GetElements(name,CloneContent(currentContent)));
         }
 
   
@@ -182,6 +179,11 @@ namespace Html.Rt.Seperator
             var lastPosition = beginPosition;
             while (escapeHtml.Next())
             {
+                if (content.CurrentChar == '/' && content.NextChar == '>')
+                {
+                    lastPosition = content.Index;
+                    break;
+                }
                 if (content.CurrentChar == '>')
                 {
                     lastPosition = content.Index;
@@ -194,7 +196,7 @@ namespace Html.Rt.Seperator
 
             if (!isCatched)
             {
-                return content.Content.Substring(beginPosition, content.Content.Length - beginPosition);
+                return content.Content.ToString().Substring(beginPosition, content.Content.Length - beginPosition);
             }
 
             beginPosition = beginPosition < 0 ? 0 : beginPosition; // this function is used for getAttributes. so it can gets from -1 position
@@ -207,10 +209,12 @@ namespace Html.Rt.Seperator
 
         public ParseResult Parse(IHtmlContent content)
         {
-            var isEndTag = this.IsEndTag(content.Content);
+            if (!content.Content.AnyFrequence('<')) return new ParseResult();
+            var fr = content.Content.GetFrequence('<');
+            var isEndTag = this.IsEndTag(content.Content.ToString(),fr.LastIndex);
             var refIndex = new RefIndex();
             if (isEndTag) return new ParseResult(this.GetEndTagElement(content, refIndex).ToArray(), refIndex.Index);
-            var isTagElement = this.IsTagElement(content.Content);
+            var isTagElement = this.IsTagElement(content.Content.ToString(), fr.LastIndex);
             if (isTagElement) return new ParseResult(this.GetTagElement(content, refIndex).ToArray(), refIndex.Index);
             return new ParseResult();
         }

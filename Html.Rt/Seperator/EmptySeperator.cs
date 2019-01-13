@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using System.Collections.Immutable;
+using System;
 
 namespace Html.Rt.Seperator
 {
@@ -12,7 +11,7 @@ namespace Html.Rt.Seperator
 
         public  ParseResult Parse(IHtmlContent content)
         {
-            return new ParseResult(ImmutableArray<IHtmlMarkup>.Empty, content.StartIndex);
+            return new ParseResult(Array.Empty<IHtmlMarkup>(), content.StartIndex);
         }
     }
 }

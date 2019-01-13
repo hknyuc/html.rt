@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using System.Linq;
 using Html.Rt.Seperator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -40,13 +42,9 @@ namespace Html.Rt.Unit.TagElements
             Assert.AreEqual(1, result.Length);
             var tagElement = (ITag) result[0];
             Assert.AreEqual("div", tagElement.Name);
-            Assert.AreEqual(1, tagElement.Attributes.Count());
+            Assert.AreEqual(1, tagElement.Attributes.Count(), tagElement.Attributes.GetNodeString());
             var attribute =  (IAttribute)tagElement.Attributes.ToArray()[0];
             Assert.AreEqual("name", attribute.Key);
-            
-            
-            
-
         }
 
 
@@ -94,9 +92,9 @@ namespace Html.Rt.Unit.TagElements
         [TestMethod]
         public void get_tag_name_from_single_tag()
         {
-            const string testCode = "<br />";
-            Assert.IsTrue(Seperator.CanParse(testCode));
-            var result = Seperator.Parse(testCode).ToArray();
+            var testCode = new HtmlContent("<br />");
+            Assert.IsTrue(Iterate(Seperator).CanParse(testCode), "Seperator.CanParse(testCode)");
+            var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1, result.Length);
             var element = result.First();
             Assert.IsInstanceOfType(element, typeof(ITag));
@@ -108,6 +106,7 @@ namespace Html.Rt.Unit.TagElements
         public void get_attributes_from_single_tag()
         {
             var testCode = new HtmlContent("<br name='key' value='41323' />");
+            Debug.WriteLine(testCode.Content);
             Assert.IsTrue(Iterate(Seperator).CanParse(testCode), "Seperator.CanParse(testCode)");
             var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1,result.Length);
@@ -126,9 +125,9 @@ namespace Html.Rt.Unit.TagElements
         [TestMethod]
         public void get_end_tag()
         {
-            const string testCode = "</div>";
-            Assert.IsTrue(Seperator.CanParse(testCode),"Seperator.CanParse(testCode)");
-            var result = Seperator.Parse(testCode).ToArray();
+            var testCode = new HtmlContent("</div>");
+            Assert.IsTrue(Iterate(Seperator).CanParse(testCode), "content:"+testCode.Content);
+            var result = Iterate(Seperator).Parse(testCode).ToArray();
             Assert.AreEqual(1, result.Length);
             Assert.IsInstanceOfType(result[0], typeof(EndTag));
             var endTag = (EndTag) result[0];

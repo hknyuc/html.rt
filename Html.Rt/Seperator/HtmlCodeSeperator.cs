@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace Html.Rt.Seperator
 {
@@ -35,6 +33,12 @@ namespace Html.Rt.Seperator
                 x.Equals(element.Name, StringComparison.OrdinalIgnoreCase));
         }
 
+        private bool IsEndTag(ITag mainTag,Content content)
+        {
+            if (!content.AnyFrequence('<')) return false;
+            var fr = content.GetFrequence('<');
+            return ElementSeperator._endRegex.IsMatch(content.ToString(), fr.LastIndex);
+        }
         private IEnumerable<IHtmlMarkup> GetResult(ITag mainTag, IHtmlContent content)
         {
             yield return mainTag;
@@ -44,12 +48,12 @@ namespace Html.Rt.Seperator
             bool isFounded = false;
             while (escapedStringHtml.Next())
             {
-                var result = this._elementSeperator.Parse(content);
+                if(!this.IsEndTag(mainTag,escapedStringHtml.Content)) continue;
+                var result = this._elementSeperator.Parse(escapedStringHtml);
                 if(!result.IsSuccess) continue;
                 var first = result.Result.First();
                 if (first is EndTag endTag)
                 {
-                    var c = escapedStringHtml.Content;
                     var isMainEndTag = endTag.Name.Equals(mainTag.Name, StringComparison.OrdinalIgnoreCase);
                     if (!isMainEndTag) continue;
                     if(escapedStringHtml.IsQuotes(result.From+content.From)) continue;
@@ -61,7 +65,7 @@ namespace Html.Rt.Seperator
             }
 
             if (!isFounded)
-                yield return new RawText(escapedStringHtml.Content);
+                yield return new RawText(escapedStringHtml.Content.ToString());
         }
 
     }

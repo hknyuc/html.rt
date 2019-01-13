@@ -40,14 +40,9 @@ namespace Html.Rt.Seperator
             var textContent = new TextContent();
             while (content.Next())
             {
-                if (content.Index == 5000)
-                {
-                    var s = content.Index;
-                    
-                }
                 var seperator = GetSeperator(content);
                 if (seperator == null)
-                    textContent.SetContent(content.Content);
+                    textContent.SetContent(content.Content.ToString());
                 else
                 {
                     var result = seperator;
@@ -55,18 +50,21 @@ namespace Html.Rt.Seperator
                     //get from html.parse();
                     if (result.From != 0)
                     {
-                        var isInMaxSize = result.From  > content.Content.Length;
-                        if(isInMaxSize) throw  new ParseErrorException($"text content could not be parsed from the element;seperate index: {result.From}, content:{content.Content}");
-                        textContent.SetContent(content.Content.Substring(0,result.From));
+                        var isInMaxSize = result.From > content.Content.Length;
+                        if (isInMaxSize)
+                            throw new ParseErrorException(
+                                $"text content could not be parsed from the element;seperate index: {result.From}, content:{content.Content}");
+                        textContent.SetContent(content.Content.Substring(0, result.From));
                         if (!textContent.IsEmpty)
                         {
                             yield return new Text(textContent.Markup);
                         }
                     }
+
                     textContent.Reset();
                     foreach (var @item in result)
                         yield return @item;
-                    
+
                     content.Outstrip();
                 }
             }

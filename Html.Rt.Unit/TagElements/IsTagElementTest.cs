@@ -244,6 +244,15 @@ namespace Html.Rt.Unit.TagElements
             var testCode = new HtmlContent("this is text area <script>function test(){console.log('hi')}</script>");
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
+            Assert.AreEqual(4, result.Length);
+            var textElement = result[0];
+            Assert.IsInstanceOfType(textElement, typeof(Text));
+            var tagElement = result[1];
+            Assert.IsInstanceOfType(tagElement, typeof(ITag));
+            var scriptText = result[2];
+            Assert.IsInstanceOfType(scriptText, typeof(RawText));
+            var endElement = result[3];
+            Assert.IsInstanceOfType(endElement, typeof(EndTag));
 
         }
 

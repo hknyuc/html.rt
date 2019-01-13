@@ -2,6 +2,7 @@ using System;
 
 namespace Html.Rt.Seperator
 {
+    
     public interface IHtmlContent :ICloneable
     {
         string RootContent { get; }
@@ -10,7 +11,7 @@ namespace Html.Rt.Seperator
         char CurrentChar { get; }
         char BeforeChar { get; }
         char NextChar { get; }
-        string Content { get; }
+        Content Content { get; }
         int StartIndex { get; }
         string NextContent { get; }
         bool NextTo(int index);
@@ -22,6 +23,7 @@ namespace Html.Rt.Seperator
         bool Next();
         void Reset();
     }
+  /*  
     public class HtmlContent3 :IHtmlContent
     {
         private int _index = -1;
@@ -177,7 +179,7 @@ namespace Html.Rt.Seperator
         }
         
     }
-
+*/
     public class HtmlContentDecorator : IHtmlContent
     {
         protected IHtmlContent HtmlContent { get; }
@@ -213,7 +215,7 @@ namespace Html.Rt.Seperator
         }
 
 
-        public string Content
+        public Content Content
         {
             get { return this.HtmlContent.Content; }
         }
@@ -225,7 +227,7 @@ namespace Html.Rt.Seperator
 
         public string NextContent
         {
-            get { return this.HtmlContent.Content; }
+            get { return this.HtmlContent.Content.ToString(); }
         }
 
         public HtmlContentDecorator(IHtmlContent content)
@@ -278,4 +280,69 @@ namespace Html.Rt.Seperator
             this.HtmlContent.Reset();
         }
     }
+
+
+    public class Content
+    {
+        private StringBuilderAdapter _stringBuilderAdapter;
+        private string _cache;
+        private bool _isChange = false;
+
+        public int Length
+        {
+            get { return this._stringBuilderAdapter.Length; }
+        }
+        public Content(StringBuilderAdapter stringBuilderAdapter)
+        {
+            this._stringBuilderAdapter = stringBuilderAdapter;
+            this._stringBuilderAdapter.Change((e) => { this._isChange = true; });
+        }
+
+        public Content()
+        {
+            this._stringBuilderAdapter = new StringBuilderAdapter();
+            this._stringBuilderAdapter.Change((e) => this._isChange = true);
+        }
+
+        public bool AnyFrequence(char ch)
+        {
+            return this._stringBuilderAdapter.AnyFrequenceOf(ch);
+        }
+
+        public ChFrequence GetFrequence(char ch)
+        {
+            return this._stringBuilderAdapter.GetFrequenceOf(ch);
+        }
+
+        public void Append(char ch)
+        {
+            this._stringBuilderAdapter.Append(ch);
+        }
+
+        public string Substring(int startIndex, int length)
+        {
+            return this.ToString().Substring(startIndex, length);
+        }
+
+        public void Append(string value)
+        {
+            this._stringBuilderAdapter.Append(value);
+        }
+
+        public void Clear()
+        {
+            this._stringBuilderAdapter.Clear();
+            
+        }
+
+
+        public override string ToString()
+        {
+            if (!this._isChange) return this._cache;
+            this._cache = this._stringBuilderAdapter.ToString();
+            this._isChange = false;
+            return this._cache;
+        }
+    }
 }
+

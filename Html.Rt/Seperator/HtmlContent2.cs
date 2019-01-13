@@ -1,6 +1,4 @@
 using System;
-using System.Reflection.Metadata.Ecma335;
-using System.Threading;
 
 namespace Html.Rt.Seperator
 {
@@ -26,7 +24,11 @@ namespace Html.Rt.Seperator
             get { return this.GetCharFromRoot(this.Index + 1); }
         }
 
-        public string Content { get; private set; } = string.Empty;
+
+        private string _cacheContent = string.Empty;
+
+        public Content Content { get; private set; }
+
         public int StartIndex { get; }
 
         public string NextContent
@@ -34,11 +36,19 @@ namespace Html.Rt.Seperator
             get { throw new Exception("qs"); }
         }
 
+        private bool _isChanged;
+
 
         public HtmlContent(string content)
         {
             this.RootContent = content;
+            this.Content = new Content();
            this.Reset(); 
+        }
+
+        private void SetContent(Content content)
+        {
+            this.Content = content;
         }
 
         private char GetCharFromRoot(int index)
@@ -48,29 +58,19 @@ namespace Html.Rt.Seperator
             return this.RootContent[index];
         }
 
-        private bool AnyChar(int index)
+
+        private bool IsOverLength(int index)
         {
-            return this.GetCharFromRoot(index) != default(char);
+            return index >= this.RootContent.Length;
         }
         
         public bool NextTo(int index)
         {
-            if (index > this.RootContent.Length)
-            {
-                
-            }
-
-            if (!this.AnyChar(index))
-            {
-                if (index > this.RootContent.Length)
-                {
-                    
-                }
-            };
-            if (index < Index) return false;
-            InsertContentTo(index); 
-            this.Index = index;
-            return true;
+            if (index < this.Index) return false;
+            var nextIndex = this.IsOverLength(index) ? this.RootContent.Length : index; 
+            InsertContentTo(nextIndex);
+            this.Index = nextIndex;
+            return !this.IsOverLength(index);
         }
 
         private void InsertContentTo(int index)
@@ -81,9 +81,7 @@ namespace Html.Rt.Seperator
             var right = first + distance;
             var len = right > this.RootContent.Length ? this.RootContent.Length : right;
             for (var i = first; i < len; i++)
-            {
-                Content += this.RootContent[i];
-            }
+                this.Content.Append(this.RootContent[i]);
         }
 
         public bool NextTo(string content)
@@ -94,7 +92,8 @@ namespace Html.Rt.Seperator
 
         public int NextIndexOf(string content)
         {
-            var result = this.RootContent.IndexOf(content, this.From, StringComparison.OrdinalIgnoreCase);
+            var from = this.From < 0 ? 0 : this.From;
+            var result = this.RootContent.IndexOf(content, from, StringComparison.OrdinalIgnoreCase);
             if (result == -1) return -1;
             return result + content.Length;
         }
@@ -102,11 +101,14 @@ namespace Html.Rt.Seperator
 
         public object Clone()
         {
-            var result = new HtmlContent(this.RootContent);
-            result.Content = this.Content;
-            result.From = this.From;
-            this.Index = this.Index;
+            var result = new HtmlContent(this.RootContent)
+            {
+                From = this.From,
+                Index =  this.Index
+            };
+            result.SetContent(this.Content);
             return result;
+           
         }
         public bool BackTo(int index)
         {
@@ -121,7 +123,7 @@ namespace Html.Rt.Seperator
 
         public void Outstrip()
         {
-            this.Content = string.Empty;
+            this.Content.Clear();
             this.From = this.Index;
             this.Next();
         }
@@ -133,7 +135,8 @@ namespace Html.Rt.Seperator
 
         public void Reset()
         {
-            this.From = -1;
+            this.From = 0;
+            this.Content.Clear();
             this.Index = -1;
         }
     }

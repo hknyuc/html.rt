@@ -27,7 +27,7 @@ namespace Html.Rt.Unit.HtmContent
             Assert.AreEqual("my", testCode.Content);
         }
 
-        private IHtmlContent CreateContent(string content)
+        private static IHtmlContent CreateContent(string content)
         {
             return new HtmlContent(content);
         }
@@ -37,7 +37,7 @@ namespace Html.Rt.Unit.HtmContent
         {
             var testCode = CreateContent("my name is hakan");
             testCode.NextTo(6);
-            Assert.AreEqual("my name", testCode.Content, testCode.Content);
+            Assert.AreEqual("my name", testCode.Content.ToString(), testCode.Content.ToString());
         }
 
         [TestMethod]
@@ -94,8 +94,21 @@ namespace Html.Rt.Unit.HtmContent
              var testCode = CreateContent(str);
             str.Length.Times(() => testCode.Next());
             Assert.AreEqual(str, testCode.Content);
-            Assert.IsFalse(testCode.Next());
+            Assert.IsFalse(testCode.Next(), testCode.CurrentChar.ToString());
             Assert.AreEqual(default(char), testCode.CurrentChar);
+        }
+
+        [TestMethod]
+        public void reset_work()
+        {
+            const string str = "my name is hakan";
+            var testCode = CreateContent(str);
+            testCode.JumpLast();
+            Assert.AreEqual(str, testCode.Content);
+            testCode.Reset();
+            Assert.AreEqual(default(char), testCode.CurrentChar);
+            Assert.AreEqual(testCode.From, 0);
+            Assert.AreEqual(testCode.Index, -1);
         }
 
         

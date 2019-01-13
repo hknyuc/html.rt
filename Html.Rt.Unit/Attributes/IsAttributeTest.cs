@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Text;
 using Html.Rt.Seperator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -256,6 +257,29 @@ namespace Html.Rt.Unit.Attributes
             var testCode = new HtmlContent(TestUtility.GetFile("invalidCh_attribute.txt"));
             Assert.IsTrue(Seperator.CanParse(testCode));
             var result = Seperator.Parse(testCode).ToArray();
+        }
+
+        [TestMethod]
+        public void concat_test()
+        {
+
+            var  file = TestUtility.GetFile("invalidCh_attribute.txt");
+            var str = string.Empty;
+            var strBuilder = new StringBuilder();
+            for (var i = 0; i < file.Length; i++)
+            {
+                strBuilder.Append(file[i]);
+            }
+
+            str = strBuilder.ToString();
+        }
+
+
+        [TestMethod]
+        public void concat_test2()
+        {
+            var file = TestUtility.GetFile("invalidCh_attribute.txt");
+            var str = file.Substring(0, file.Length - 1);
         }
    
     }

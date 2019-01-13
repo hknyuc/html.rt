@@ -1,19 +1,24 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\Html.Rt.csproj",
+    "projectUniqueName": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\Html.Rt.csproj",
     "projectName": "Html.Rt",
-    "projectPath": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\Html.Rt.csproj",
-    "outputPath": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\obj\\",
+    "projectPath": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\Html.Rt.csproj",
+    "outputPath": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\obj\\",
     "projectStyle": "PackageReference",
+    "crossTargeting": true,
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "originalTargetFrameworks": [
-      "netcoreapp2.1"
+      "netcoreapp2.1",
+      "netstandard2.0"
     ],
     "frameworks": {
       "netcoreapp2.1": {
+        "projectReferences": {}
+      },
+      "netstandard2.0": {
         "projectReferences": {}
       }
     },
@@ -30,6 +35,21 @@
           "suppressParent": "All",
           "target": "Package",
           "version": "[2.1.0, )",
+          "autoReferenced": true
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    },
+    "netstandard2.0": {
+      "dependencies": {
+        "NETStandard.Library": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.3, )",
           "autoReferenced": true
         }
       },

@@ -28,7 +28,7 @@ namespace Html.Rt
             this.Markup = markup;
             this.Name = name;
             this.Attributes = new Attributes();
-            this.Elements = ArraySegment<IHtmlMarkup>.Empty;
+            this.Elements = Array.Empty<IHtmlMarkup>();
         }
 
         public override string ToString()

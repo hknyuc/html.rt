@@ -16,7 +16,7 @@ namespace Html.Rt.Seperator
 
         private static IEnumerable<IHtmlMarkup> GetResult(IHtmlContent content)
         {
-            yield return new Text(content.Content);
+            yield return new Text(content.Content.ToString());
         }
     }
 }

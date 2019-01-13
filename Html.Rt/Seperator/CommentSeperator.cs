@@ -9,7 +9,7 @@ namespace Html.Rt.Seperator
     {
         private int CanParseIndex(IHtmlContent content)
         {
-            return (content.Content.IndexOf("<!--",StringComparison.Ordinal));
+            return (content.Content.ToString().IndexOf("<!--",StringComparison.Ordinal));
         }
 
         public ParseResult Parse(IHtmlContent content)
@@ -21,14 +21,14 @@ namespace Html.Rt.Seperator
 
         private static IEnumerable<IHtmlMarkup> GetParsed(IHtmlContent content)
         {
-            var indexOfStart = content.Content.IndexOf("<!--", StringComparison.Ordinal);
+            var indexOfStart = content.Content.ToString().IndexOf("<!--", StringComparison.Ordinal);
             if(indexOfStart < 0) yield break;
             var lastOfEnd = content.NextIndexOf("-->");
             if (lastOfEnd > 0)
                 content.NextTo(lastOfEnd);
             else content.JumpLast();
-            var text = content.Content.Substring(4, content.Content.Length - 3-4);
-            yield return new Comment(content.Content, text);
+            var text = content.Content.ToString().Substring(4, content.Content.Length - 3-4);
+            yield return new Comment(content.Content.ToString(), text);
         }
     }
 }

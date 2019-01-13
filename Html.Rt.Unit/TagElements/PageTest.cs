@@ -17,7 +17,8 @@ namespace Html.Rt.Unit.TagElements
         public void tdk()
         {
             var file = ReadFile("tdk.html");
-            var document = NewDocument(file).OfType<Text>().ToArray();
+            var document = NewDocument(file).ToArray();
+            Assert.AreEqual(732, document.Length);
         }
         
         [TestMethod]
@@ -26,8 +27,9 @@ namespace Html.Rt.Unit.TagElements
         {
             var file = ReadFile("tdk3.html");
             var document = NewDocument(file).ToArray();
-            var table = document.GetElementById("hor-minimalist-a");
-            var elements = table.Elements.OfType<Text>().ToArray();
+            Assert.AreEqual(1578, document.Length);
+            //           var table = document.GetElementById("hor-minimalist-a");
+            //           var elements = table.Elements.OfType<Text>().ToArray();
 
         }
 
@@ -35,12 +37,19 @@ namespace Html.Rt.Unit.TagElements
         public void twitter()
         {
             var file = ReadFile("twitter.html");
-            var observerableHtml = new ObservabletHtmlContent(file);
+            var htmContent = new HtmlContent(file);
+            var document = NewDocument(htmContent).ToArray();
+            Assert.AreEqual(1445, document.Length);
 
-            var document = NewDocument(observerableHtml).Take(1000).ToArray();
+        }
 
-
-
+        [TestMethod]
+        public void facebook()
+        {
+            var file = ReadFile("facebook.html");
+            var html = new HtmlContent(file);
+            var document = NewDocument(html).ToArray();
+            Assert.AreEqual(131, document.Length);
         }
 
 
@@ -51,7 +60,7 @@ namespace Html.Rt.Unit.TagElements
 
         private Document NewDocument(string content)
         {
-            return new Document(content);
+            return new Document(new HtmlContent(content));
         }
 
         private Document NewDocument(IHtmlContent content)

@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt.Unit\\Html.Rt.Unit.csproj",
+    "projectUniqueName": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt.Unit\\Html.Rt.Unit.csproj",
     "projectName": "Html.Rt.Unit",
-    "projectPath": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt.Unit\\Html.Rt.Unit.csproj",
-    "outputPath": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt.Unit\\obj\\",
+    "projectPath": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt.Unit\\Html.Rt.Unit.csproj",
+    "outputPath": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt.Unit\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -15,8 +15,8 @@
     "frameworks": {
       "netcoreapp2.1": {
         "projectReferences": {
-          "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\Html.Rt.csproj": {
-            "projectPath": "C:\\Users\\Hakanyu\\Documents\\Github\\html.rt\\Html.Rt\\Html.Rt.csproj"
+          "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\Html.Rt.csproj": {
+            "projectPath": "C:\\Users\\Pc-Arete\\Documents\\github\\html.rt\\Html.Rt\\Html.Rt.csproj"
           }
         }
       }

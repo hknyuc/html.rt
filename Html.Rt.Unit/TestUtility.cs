@@ -7,7 +7,7 @@ namespace Html.Rt.Unit
     {
         public static string GetFile(string path)
         {
-            string r = Path.Combine(@"C:\Users\Hakanyu\Documents\Github\html.rt\Html.Rt.Unit\", @"Files\" + path);
+            string r = Path.Combine(@"C:\Users\Pc-Arete\Documents\Github\html.rt\Html.Rt.Unit\", @"Files\" + path);
             return System.IO.File.ReadAllText(r);
             
         }
