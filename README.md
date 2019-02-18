@@ -1,5 +1,5 @@
 # Html.Rt
-##### Fast, Simple Html Parser Library 
+##### Fast, Simple Html Parsing Library 
 ---
 ## Install
 #### Nuget
